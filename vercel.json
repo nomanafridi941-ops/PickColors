@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "dist/**", "use": "@vercel/static" },
+    { "src": "dist/sitemap.xml", "use": "@vercel/static" },
+    { "src": "dist/robots.txt", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/sitemap.xml", "headers": { "Content-Type": "application/xml" }, "dest": "/dist/sitemap.xml" },
+    { "src": "/robots.txt", "headers": { "Content-Type": "text/plain" }, "dest": "/dist/robots.txt" },
+    { "src": "/(.*)", "dest": "/dist/index.html" }
+  ]
+}
