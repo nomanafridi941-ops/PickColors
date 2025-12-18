@@ -1,0 +1,7 @@
+{
+  "name": "PickColors",
+  "description": "Free Online Color Tools for Designers & Developers. Features color picking, gradients, harmonies, contrast checking, and AI-powered mood boards.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
