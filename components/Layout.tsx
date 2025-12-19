@@ -1,7 +1,9 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { TOOLS } from '../constants';
 import { ToolCategory } from '../types';
+import AdPlaceholder from './AdPlaceholder';
 
 const categories: ToolCategory[] = ['Design Tools', 'Converters', 'Accessibility', 'Image Tools', 'Discovery'];
 
@@ -115,9 +117,12 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
       <main className="flex-grow">
         {children}
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 mt-16 mb-8">
+           <AdPlaceholder type="horizontal" className="opacity-80" />
+        </div>
       </main>
 
-      <footer className="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800/50 py-24 mt-24">
+      <footer className="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800/50 py-24">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="flex flex-col lg:flex-row justify-between gap-16">
             <div className="max-w-sm">

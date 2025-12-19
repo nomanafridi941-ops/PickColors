@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { hexToRgb, rgbToHex, rgbToHsl, hslToRgb } from '../../utils/colorUtils';
+import AdPlaceholder from '../../components/AdPlaceholder';
 
 // Added interface to support initialMode prop from routes
 interface ColorPickerProps {
@@ -142,37 +143,12 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ initialMode }) => {
             </div>
           </div>
 
-          {/* HSL Card */}
-          <div className="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm transition-all">
-            <div className="flex justify-between items-center mb-4">
-              <label className="text-xs font-black uppercase tracking-widest text-slate-400 dark:text-slate-500">HSL Model</label>
-              <button 
-                onClick={() => handleCopy(`hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`)}
-                className={`px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest transition-all ${copied?.includes('hsl') ? 'bg-emerald-500 text-white' : 'bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-500 hover:text-white'}`}
-              >
-                {copied?.includes('hsl') ? 'Copied!' : 'Copy CSS'}
-              </button>
-            </div>
-            <div className="grid grid-cols-3 gap-3">
-              <div className="space-y-1.5">
-                <span className="text-[10px] font-bold text-slate-400 ml-1">Hue</span>
-                <input type="number" min="0" max="360" value={hsl.h} onChange={(e) => updateFromHsl(parseInt(e.target.value) || 0, hsl.s, hsl.l)} className="w-full p-3 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 rounded-xl font-mono text-center focus:ring-2 focus:ring-indigo-500/20" />
-              </div>
-              <div className="space-y-1.5">
-                <span className="text-[10px] font-bold text-slate-400 ml-1">Sat %</span>
-                <input type="number" min="0" max="100" value={hsl.s} onChange={(e) => updateFromHsl(hsl.h, parseInt(e.target.value) || 0, hsl.l)} className="w-full p-3 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 rounded-xl font-mono text-center focus:ring-2 focus:ring-indigo-500/20" />
-              </div>
-              <div className="space-y-1.5">
-                <span className="text-[10px] font-bold text-slate-400 ml-1">Light %</span>
-                <input type="number" min="0" max="100" value={hsl.l} onChange={(e) => updateFromHsl(hsl.h, hsl.s, parseInt(e.target.value) || 0)} className="w-full p-3 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 rounded-xl font-mono text-center focus:ring-2 focus:ring-indigo-500/20" />
-              </div>
-            </div>
-          </div>
+          <AdPlaceholder type="sidebar" className="mt-4" />
         </div>
       </div>
 
       <div className="mt-20 border-t border-slate-200 dark:border-slate-800 pt-16">
-        <div className="grid md:grid-cols-2 gap-12 text-slate-600 dark:text-slate-400 leading-relaxed">
+        <div className="grid md:grid-cols-2 gap-12 text-slate-600 dark:text-slate-400 leading-relaxed mb-16">
             <div>
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Precision Conversion</h3>
                 <p>PickColors uses standard sRGB color space mapping. Our algorithms ensure that your 8-bit RGB values map perfectly to HSL and HEX counterparts, preventing "color drift" often found in simpler tools. This is essential for maintaining brand integrity across digital platforms.</p>
@@ -182,6 +158,8 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ initialMode }) => {
                 <p>Quickly copy CSS values for your React or Tailwind projects. The "Copy" buttons provide standardized CSS syntax, ready to be pasted directly into your stylesheets or styled-components. Seamlessly switch between dark and light themes to see how your colors perform in different environments.</p>
             </div>
         </div>
+        
+        <AdPlaceholder type="horizontal" />
       </div>
     </div>
   );

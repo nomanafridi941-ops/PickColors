@@ -2,12 +2,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { TOOLS } from '../constants';
+import AdPlaceholder from '../components/AdPlaceholder';
 
 const Home: React.FC = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-40 px-4">
+      <section className="relative pt-32 pb-24 px-4">
         {/* Dynamic Background Elements */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 overflow-hidden">
           <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[60%] bg-indigo-500/10 rounded-full blur-[120px] animate-pulse-slow"></div>
@@ -37,6 +38,10 @@ const Home: React.FC = () => {
               Our Vision
             </Link>
           </div>
+
+          <div className="mt-20 max-w-4xl mx-auto px-4">
+            <AdPlaceholder type="horizontal" className="shadow-2xl shadow-black/5" />
+          </div>
         </div>
       </section>
 
@@ -53,6 +58,9 @@ const Home: React.FC = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {/* Ad Slot in Grid */}
+          <AdPlaceholder type="square" className="lg:order-2" />
+          
           {TOOLS.map((tool) => (
             <Link 
               key={tool.id} 
