@@ -30,6 +30,7 @@ const About: React.FC = () => {
           <li><strong>Artists & Creators:</strong> Extract inspiration from photos and images.</li>
         </ul>
       </div>
+      </div>
     </>
   );
 };

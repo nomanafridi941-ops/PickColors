@@ -27,6 +27,7 @@ const Contact: React.FC = () => {
         <p>Follow us for updates and new tools.</p>
         {/* Placeholder for social links */}
       </div>
+      </div>
     </>
   );
 };
