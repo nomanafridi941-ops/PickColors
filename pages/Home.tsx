@@ -129,7 +129,6 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
-    </div>
     </>
   );
 };
