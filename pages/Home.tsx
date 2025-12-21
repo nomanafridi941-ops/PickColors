@@ -13,9 +13,8 @@ const Home: React.FC = () => {
         description="16 High-performance color tools for designers and developers. Pick, convert, and generate palettes with precision. No accounts. No tracking. Pure performance."
         url="/"
       />
-      <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 px-4">
+      <section className="relative pt-32 pb-24 px-4 overflow-hidden">
         {/* Dynamic Background Elements */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 overflow-hidden">
           <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[60%] bg-indigo-500/10 rounded-full blur-[120px] animate-pulse-slow"></div>
@@ -51,7 +50,6 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
-      </div>
 
       {/* Tools Grid */}
       <section id="tools" className="py-32 px-4 max-w-7xl mx-auto border-t border-slate-100 dark:border-slate-900">
