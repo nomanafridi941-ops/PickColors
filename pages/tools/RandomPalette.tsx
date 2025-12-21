@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { generateRandomHex } from '../../utils/colorUtils';
+import SEOHead from '../../components/SEOHead';
 
 const RandomPalette: React.FC = () => {
   const [colors, setColors] = useState<{hex: string, locked: boolean}[]>(() => 
@@ -27,7 +28,13 @@ const RandomPalette: React.FC = () => {
   }, []);
 
   return (
-    <div className="h-[calc(100vh-80px)] w-full flex flex-col">
+    <>
+      <SEOHead 
+        title="Random Color Palette Generator"
+        description="Generate fresh color palettes with a single click. Random color combinations for design inspiration."
+        url="/tools/palette"
+      />
+      <div className="h-[calc(100vh-80px)] w-full flex flex-col">
       <div className="flex-grow flex flex-col md:flex-row">
         {colors.map((c, i) => (
           <div 
@@ -65,6 +72,7 @@ const RandomPalette: React.FC = () => {
         </button>
       </div>
     </div>
+    </>
   );
 };
 

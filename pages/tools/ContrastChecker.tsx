@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { hexToRgb, getContrastRatio } from '../../utils/colorUtils';
+import SEOHead from '../../components/SEOHead';
 
 // Added interface to support fullAudit prop from route configuration
 interface ContrastCheckerProps {
@@ -21,7 +22,13 @@ const ContrastChecker: React.FC<ContrastCheckerProps> = ({ fullAudit }) => {
   const getStatus = (target: number) => ratio >= target ? 'PASS' : 'FAIL';
 
   return (
-    <div className="max-w-5xl mx-auto py-16 px-4">
+    <>
+      <SEOHead 
+        title="Contrast Checker"
+        description="Test color accessibility based on WCAG guidelines. Check color contrast ratios for web accessibility compliance."
+        url="/tools/contrast"
+      />
+      <div className="max-w-5xl mx-auto py-16 px-4">
       <div className="text-center mb-16">
         {/* Dynamic header title based on fullAudit mode */}
         <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4">
@@ -101,7 +108,7 @@ const ContrastChecker: React.FC<ContrastCheckerProps> = ({ fullAudit }) => {
             <div className="flex items-center gap-2 font-medium underline decoration-2 underline-offset-4">Sample Link</div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

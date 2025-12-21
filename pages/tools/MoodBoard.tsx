@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { GoogleGenAI, Type } from "@google/genai";
+import SEOHead from '../../components/SEOHead';
 
 const MoodBoard: React.FC = () => {
   const [keyword, setKeyword] = useState('');
@@ -47,7 +48,13 @@ const MoodBoard: React.FC = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto py-16 px-4">
+    <>
+      <SEOHead 
+        title="Mood Board Generator"
+        description="Generate thematic color palettes using AI. Create beautiful color schemes inspired by moods, themes, and concepts."
+        url="/tools/mood"
+      />
+      <div className="max-w-7xl mx-auto py-16 px-4">
       <div className="text-center mb-16">
         <div className="inline-flex items-center gap-3 px-6 py-2 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-full text-xs font-black uppercase tracking-[0.2em] mb-8 shadow-xl shadow-indigo-500/20">
           <span className="w-2 h-2 bg-white rounded-full animate-ping"></span>
@@ -127,6 +134,7 @@ const MoodBoard: React.FC = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 

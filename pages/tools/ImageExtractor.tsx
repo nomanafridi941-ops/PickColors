@@ -1,5 +1,6 @@
 
 import React, { useState, useRef } from 'react';
+import SEOHead from '../../components/SEOHead';
 
 const SAMPLES = [
   { name: 'Nature', url: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=400&auto=format&fit=crop' },
@@ -81,7 +82,13 @@ const ImageExtractor: React.FC<{ useUrl?: boolean }> = ({ useUrl }) => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto py-16 px-4">
+    <>
+      <SEOHead 
+        title="Image Color Extractor"
+        description="Upload images to extract dominant color palettes. AI-powered color extraction from photos for design inspiration."
+        url="/tools/extractor"
+      />
+      <div className="max-w-6xl mx-auto py-16 px-4">
       <div className="text-center mb-12">
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-indigo-600 text-white text-3xl mb-6 shadow-xl shadow-indigo-600/20">
           {useUrl ? '🔗' : '📷'}
@@ -177,6 +184,7 @@ const ImageExtractor: React.FC<{ useUrl?: boolean }> = ({ useUrl }) => {
 
       <canvas ref={canvasRef} className="hidden" />
     </div>
+    </>
   );
 };
 

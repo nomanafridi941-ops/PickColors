@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { COLOR_NAMES_MAP } from '../../constants';
 import { hexToRgb } from '../../utils/colorUtils';
+import SEOHead from '../../components/SEOHead';
 
 const NameThatColor: React.FC = () => {
   const [hex, setHex] = useState('#6366F1');
@@ -27,7 +28,13 @@ const NameThatColor: React.FC = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto py-20 px-4 text-center">
+    <>
+      <SEOHead 
+        title="Name That Color"
+        description="Identify names for specific color codes. Find the perfect name for any hex color."
+        url="/tools/namer"
+      />
+      <div className="max-w-4xl mx-auto py-20 px-4 text-center">
       <h1 className="text-5xl font-black mb-12">Name That Color</h1>
       <div className="flex flex-col items-center gap-12">
         <div 
@@ -46,6 +53,7 @@ const NameThatColor: React.FC = () => {
         />
       </div>
     </div>
+    </>
   );
 };
 

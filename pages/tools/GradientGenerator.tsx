@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import SEOHead from '../../components/SEOHead';
 
 interface ColorStop {
   id: string;
@@ -45,7 +46,13 @@ const GradientGenerator: React.FC = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto py-16 px-4">
+    <>
+      <SEOHead 
+        title="Gradient Generator"
+        description="Create beautiful CSS gradients with multiple color stops. Professional gradient designer for developers and designers."
+        url="/tools/gradient"
+      />
+      <div className="max-w-7xl mx-auto py-16 px-4">
       <div className="text-center mb-16">
         <h1 className="text-5xl font-black mb-4 tracking-tight">Pro Gradient Designer</h1>
         <p className="text-slate-500 max-w-xl mx-auto text-lg">Create complex multi-stop CSS gradients with precision control and live code generation.</p>
@@ -142,7 +149,7 @@ const GradientGenerator: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

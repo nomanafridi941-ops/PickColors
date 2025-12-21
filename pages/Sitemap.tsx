@@ -2,12 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { TOOLS } from '../constants';
 import { ToolCategory } from '../types';
+import SEOHead from '../components/SEOHead';
 
 const Sitemap: React.FC = () => {
   const categories: ToolCategory[] = ['Design Tools', 'Converters', 'Accessibility', 'Image Tools', 'Discovery'];
 
   return (
-    <div className="max-w-6xl mx-auto py-24 px-4">
+    <>
+      <SEOHead 
+        title="Sitemap"
+        description="Complete directory of all PickColors tools and pages. Find everything on our site."
+        url="/sitemap"
+      />
+      <div className="max-w-6xl mx-auto py-24 px-4">
       <div className="text-center mb-20">
         <h1 className="text-5xl font-black mb-6 tracking-tight">Sitemap</h1>
         <p className="text-slate-500 text-lg max-w-2xl mx-auto">
@@ -56,6 +63,7 @@ const Sitemap: React.FC = () => {
         </p>
       </div>
     </div>
+    </>
   );
 };
 

@@ -1,6 +1,7 @@
 
 import React, { useState, useMemo } from 'react';
 import { getHarmonies } from '../../utils/colorUtils';
+import SEOHead from '../../components/SEOHead';
 
 const ColorHarmonies: React.FC = () => {
   const [baseColor, setBaseColor] = useState('#6366F1');
@@ -32,7 +33,13 @@ const ColorHarmonies: React.FC = () => {
   );
 
   return (
-    <div className="max-w-6xl mx-auto py-16 px-4">
+    <>
+      <SEOHead 
+        title="Color Harmonies"
+        description="Discover perfect color combinations using color theory. Generate harmonies like complementary, analogous, and triadic palettes."
+        url="/tools/harmonies"
+      />
+      <div className="max-w-6xl mx-auto py-16 px-4">
       <div className="text-center mb-16">
         <h1 className="text-4xl font-black mb-4">Color Harmonies</h1>
         <p className="text-slate-500 max-w-xl mx-auto">Discover mathematically perfect color relationships based on color theory.</p>
@@ -58,6 +65,7 @@ const ColorHarmonies: React.FC = () => {
       <HarmonySection title="Split Complementary" colors={harmonies.splitComplementary} />
       <HarmonySection title="Tetradic" colors={harmonies.tetradic} />
     </div>
+    </>
   );
 };
 

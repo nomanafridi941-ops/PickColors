@@ -1,9 +1,16 @@
 
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 
 const About: React.FC = () => {
   return (
-    <div className="max-w-4xl mx-auto py-20 px-4">
+    <>
+      <SEOHead 
+        title="About PickColors"
+        description="Learn about PickColors - a suite of free, high-quality color tools for designers and developers. Fast, accurate, and completely privacy-first."
+        url="/about"
+      />
+      <div className="max-w-4xl mx-auto py-20 px-4">
       <h1 className="text-4xl font-bold mb-8">About PickColors</h1>
       <div className="prose prose-indigo max-w-none text-gray-600 space-y-6">
         <p className="text-xl text-gray-900 font-medium">
@@ -23,7 +30,7 @@ const About: React.FC = () => {
           <li><strong>Artists & Creators:</strong> Extract inspiration from photos and images.</li>
         </ul>
       </div>
-    </div>
+    </>
   );
 };
 

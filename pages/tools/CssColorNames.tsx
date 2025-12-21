@@ -1,6 +1,7 @@
 
 import React, { useState, useMemo } from 'react';
 import { hexToRgb } from '../../utils/colorUtils';
+import SEOHead from '../../components/SEOHead';
 
 const CSS_COLORS = [
   { name: 'AliceBlue', hex: '#F0F8FF' }, { name: 'AntiqueWhite', hex: '#FAEBD7' }, { name: 'Aqua', hex: '#00FFFF' },
@@ -85,7 +86,13 @@ const CssColorNames: React.FC = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto py-16 px-4">
+    <>
+      <SEOHead 
+        title="CSS Color Names Finder"
+        description="Search and find all 148 official CSS color keywords. Find hex codes for CSS color names."
+        url="/tools/css-names"
+      />
+      <div className="max-w-7xl mx-auto py-16 px-4">
       <div className="text-center mb-12">
         <h1 className="text-5xl font-black mb-4 tracking-tight">CSS Color Names Finder</h1>
         <p className="text-slate-500 max-w-2xl mx-auto text-lg">
@@ -169,6 +176,7 @@ const CssColorNames: React.FC = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 

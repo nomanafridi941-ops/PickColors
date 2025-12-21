@@ -1,6 +1,7 @@
 
 import React, { useState, useMemo } from 'react';
 import { getShadesAndTints } from '../../utils/colorUtils';
+import SEOHead from '../../components/SEOHead';
 
 const ColorFinder: React.FC = () => {
   const [hex, setHex] = useState('#6366F1');
@@ -27,7 +28,13 @@ const ColorFinder: React.FC = () => {
   );
 
   return (
-    <div className="max-w-6xl mx-auto py-16 px-4">
+    <>
+      <SEOHead 
+        title="Color Finder"
+        description="Find similar shades and variations for any color. Discover tints and shades of your favorite hex colors."
+        url="/tools/finder"
+      />
+      <div className="max-w-6xl mx-auto py-16 px-4">
       <h1 className="text-4xl font-black mb-16 text-center">Color Variations</h1>
       <div className="flex justify-center mb-16 gap-4">
         <input type="color" value={hex} onChange={e => setHex(e.target.value)} className="w-16 h-16 rounded-2xl border-none cursor-pointer" />
@@ -38,6 +45,7 @@ const ColorFinder: React.FC = () => {
       <div className="h-40 w-full rounded-3xl mb-12 shadow-inner border border-black/5 dark:border-white/5" style={{ backgroundColor: hex }} />
       <ColorBar title="Shades (Darker)" colors={shades} />
     </div>
+    </>
   );
 };
 

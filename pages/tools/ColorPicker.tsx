@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { hexToRgb, rgbToHex, rgbToHsl, hslToRgb } from '../../utils/colorUtils';
 import AdPlaceholder from '../../components/AdPlaceholder';
+import SEOHead from '../../components/SEOHead';
 
 // Added interface to support initialMode prop from routes
 interface ColorPickerProps {
@@ -46,7 +47,13 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ initialMode }) => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto py-16 px-4">
+    <>
+      <SEOHead 
+        title="Color Picker & Converter"
+        description="Pick colors visually and convert between HEX, RGB, and HSL. Accurate color conversion tool for designers and developers."
+        url="/tools/picker"
+      />
+      <div className="max-w-6xl mx-auto py-16 px-4">
       <div className="mb-16 text-center">
         {/* Dynamic title based on initialMode prop */}
         <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4 tracking-tight">
@@ -161,7 +168,7 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ initialMode }) => {
         
         <AdPlaceholder type="horizontal" />
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -42,9 +43,10 @@ const Terms = () => (
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <Layout>
-        <Suspense fallback={<Loading />}>
+    <HelmetProvider>
+      <Router>
+        <Layout>
+          <Suspense fallback={<Loading />}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -74,6 +76,7 @@ const App: React.FC = () => {
         </Suspense>
       </Layout>
     </Router>
+    </HelmetProvider>
   );
 };
 

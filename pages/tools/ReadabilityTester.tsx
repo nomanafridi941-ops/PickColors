@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import SEOHead from '../../components/SEOHead';
 
 const ReadabilityTester: React.FC = () => {
   const [bg, setBg] = useState('#FFFFFF');
@@ -7,7 +8,13 @@ const ReadabilityTester: React.FC = () => {
   const [fontSize, setFontSize] = useState(16);
 
   return (
-    <div className="max-w-5xl mx-auto py-16 px-4">
+    <>
+      <SEOHead 
+        title="Readability Tester"
+        description="Preview text readability across different sizes and backgrounds. Test color combinations for readability."
+        url="/tools/readability"
+      />
+      <div className="max-w-5xl mx-auto py-16 px-4">
       <h1 className="text-4xl font-black mb-12 text-center">Readability Tester</h1>
       
       <div className="grid lg:grid-cols-4 gap-8 mb-12">
@@ -39,6 +46,7 @@ const ReadabilityTester: React.FC = () => {
         <p className="italic">Italic Style Preview</p>
       </div>
     </div>
+    </>
   );
 };
 

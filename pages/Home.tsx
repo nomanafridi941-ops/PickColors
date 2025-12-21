@@ -3,10 +3,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { TOOLS } from '../constants';
 import AdPlaceholder from '../components/AdPlaceholder';
+import SEOHead from '../components/SEOHead';
 
 const Home: React.FC = () => {
   return (
-    <div className="overflow-hidden">
+    <>
+      <SEOHead 
+        title="Free Online Color Tools"
+        description="16 High-performance color tools for designers and developers. Pick, convert, and generate palettes with precision. No accounts. No tracking. Pure performance."
+        url="/"
+      />
+      <div className="overflow-hidden">
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-4">
         {/* Dynamic Background Elements */}
@@ -123,7 +130,7 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 
