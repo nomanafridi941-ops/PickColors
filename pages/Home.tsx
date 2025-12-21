@@ -51,6 +51,7 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
+      </div>
 
       {/* Tools Grid */}
       <section id="tools" className="py-32 px-4 max-w-7xl mx-auto border-t border-slate-100 dark:border-slate-900">
@@ -130,6 +131,7 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
+    </div>
     </>
   );
 };
