@@ -149,6 +149,7 @@ const GradientGenerator: React.FC = () => {
           </div>
         </div>
       </div>
+      </div>
     </>
   );
 };
