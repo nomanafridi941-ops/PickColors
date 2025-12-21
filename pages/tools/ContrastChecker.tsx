@@ -108,6 +108,7 @@ const ContrastChecker: React.FC<ContrastCheckerProps> = ({ fullAudit }) => {
             <div className="flex items-center gap-2 font-medium underline decoration-2 underline-offset-4">Sample Link</div>
         </div>
       </div>
+      </div>
     </>
   );
 };
