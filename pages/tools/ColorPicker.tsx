@@ -168,6 +168,7 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ initialMode }) => {
         
         <AdPlaceholder type="horizontal" />
       </div>
+      </div>
     </>
   );
 };
