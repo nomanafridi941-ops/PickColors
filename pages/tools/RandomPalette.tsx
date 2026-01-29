@@ -72,7 +72,6 @@ const RandomPalette: React.FC = () => {
           Shuffle Palette
         </button>
       </div>
-    </div>
     </>
   );
 };
