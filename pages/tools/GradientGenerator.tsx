@@ -46,7 +46,7 @@ const GradientGenerator: React.FC = () => {
   };
 
   return (
-    <>
+    <div>
       <SEOHead 
         title="Gradient Generator"
         description="Create beautiful CSS gradients with multiple color stops. Professional gradient designer for developers and designers."
@@ -152,7 +152,7 @@ const GradientGenerator: React.FC = () => {
       </div>
       {/* Helper text for copy functionality */}
       <p className="text-xs text-slate-400 mt-2 mb-6">Copy the CSS gradient code with one click.</p>
-    </>
+    </div>
   );
 };
 
