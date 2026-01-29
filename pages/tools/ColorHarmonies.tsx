@@ -1,7 +1,7 @@
-
 import React, { useState, useMemo } from 'react';
 import { getHarmonies } from '../../utils/colorUtils';
 import SEOHead from '../../components/SEOHead';
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 const ColorHarmonies: React.FC = () => {
   const [baseColor, setBaseColor] = useState('#6366F1');
@@ -40,23 +40,14 @@ const ColorHarmonies: React.FC = () => {
         url="/tools/harmonies"
       />
       <div className="max-w-6xl mx-auto py-16 px-4">
+      <Breadcrumbs />
       <div className="text-center mb-16">
-        <h1 className="text-4xl font-black mb-4">Color Harmonies</h1>
-        <p className="text-slate-500 max-w-xl mx-auto">Discover mathematically perfect color relationships based on color theory.</p>
-        <div className="mt-8 flex justify-center items-center gap-4">
-          <input 
-            type="color" 
-            value={baseColor} 
-            onChange={e => setBaseColor(e.target.value)} 
-            className="w-16 h-16 p-0 border-none rounded-2xl cursor-pointer shadow-lg"
-          />
-          <input 
-            type="text" 
-            value={baseColor} 
-            onChange={e => setBaseColor(e.target.value)} 
-            className="px-6 py-4 bg-white dark:bg-slate-900 border dark:border-slate-800 rounded-2xl font-mono text-xl outline-none focus:ring-2 focus:ring-indigo-500"
-          />
-        </div>
+        <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4">
+          Color Harmonies Generator Online
+        </h1>
+        <p className="text-slate-600 dark:text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
+          Instantly generate harmonious color palettes using color theory. This free online color harmonies tool helps designers and developers create complementary, analogous, triadic, and more color schemes for any project.
+        </p>
       </div>
 
       <HarmonySection title="Complementary" colors={harmonies.complementary} />
@@ -64,6 +55,51 @@ const ColorHarmonies: React.FC = () => {
       <HarmonySection title="Triadic" colors={harmonies.triadic} />
       <HarmonySection title="Split Complementary" colors={harmonies.splitComplementary} />
       <HarmonySection title="Tetradic" colors={harmonies.tetradic} />
+
+      {/* Helper text for copy functionality */}
+      <p className="text-xs text-slate-400 mt-2 mb-6">Copy any harmony color code with one click.</p>
+
+      {/* SEO Content Section */}
+      <section className="prose prose-indigo dark:prose-invert max-w-3xl mx-auto my-12">
+        <h2>What is a Color Harmonies Generator?</h2>
+        <p>The Color Harmonies Generator is a tool that uses color theory to create beautiful, balanced color palettes. It shows you combinations like complementary, analogous, triadic, and tetradic, so you can design with confidence and creativity. No more guessing which colors work together—just pick a base color and explore!</p>
+        <h2>Who Should Use This Tool?</h2>
+        <ul>
+          <li><strong>Designers</strong>—for branding, UI, and illustration</li>
+          <li><strong>Developers</strong>—for CSS and theme creation</li>
+          <li><strong>Artists</strong>—for digital and print artwork</li>
+          <li><strong>Marketers</strong>—for campaign and ad color schemes</li>
+        </ul>
+        <h2>How to Use the Color Harmonies Generator</h2>
+        <ol>
+          <li>Pick a base color using the color input or HEX code.</li>
+          <li>View the generated harmonies: complementary, analogous, triadic, and more.</li>
+          <li>Copy any color code with one click for your project.</li>
+        </ol>
+        <h2>Common Mistakes to Avoid</h2>
+        <ul>
+          <li>Using too many colors in one palette</li>
+          <li>Ignoring color contrast for accessibility</li>
+          <li>Not testing palettes in both light and dark modes</li>
+        </ul>
+        <h2>FAQs</h2>
+        <ul>
+          <li><strong>Q:</strong> What are color harmonies?<br/><strong>A:</strong> Harmonies are color combinations that look good together, based on color wheel relationships.</li>
+          <li><strong>Q:</strong> Can I use these palettes in CSS?<br/><strong>A:</strong> Yes! All codes are CSS-ready.</li>
+          <li><strong>Q:</strong> Is this tool free?<br/><strong>A:</strong> 100% free, no login required.</li>
+          <li><strong>Q:</strong> Can I export palettes?<br/><strong>A:</strong> Copy any color code, or use our <a href="/tools/palette">Palette Generator</a> for advanced export options.</li>
+        </ul>
+      </section>
+      {/* Related Color Tools Section */}
+      <section className="max-w-3xl mx-auto my-16">
+        <h2 className="text-2xl font-bold mb-4">Related Color Tools</h2>
+        <ul className="grid md:grid-cols-2 gap-4">
+          <li><a href="/tools/picker" className="text-indigo-600 hover:underline">Pick and convert colors with our Color Picker</a></li>
+          <li><a href="/tools/palette" className="text-indigo-600 hover:underline">Generate custom color palettes</a></li>
+          <li><a href="/tools/contrast" className="text-indigo-600 hover:underline">Check color contrast for accessibility</a></li>
+          <li><a href="/tools/hsl-converter" className="text-indigo-600 hover:underline">Convert colors to HSL format</a></li>
+        </ul>
+      </section>
     </div>
     </>
   );

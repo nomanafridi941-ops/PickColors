@@ -1,8 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
 import { hexToRgb, rgbToHex, rgbToHsl, hslToRgb } from '../../utils/colorUtils';
 import AdPlaceholder from '../../components/AdPlaceholder';
 import SEOHead from '../../components/SEOHead';
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 // Added interface to support initialMode prop from routes
 interface ColorPickerProps {
@@ -54,6 +54,7 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ initialMode }) => {
         url="/tools/picker"
       />
       <div className="max-w-6xl mx-auto py-16 px-4">
+      <Breadcrumbs />
       <div className="mb-16 text-center">
         {/* Dynamic title based on initialMode prop */}
         <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4 tracking-tight">
@@ -62,7 +63,9 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ initialMode }) => {
            initialMode === 'hsl' ? 'HSL Color Converter' : 
            'Color Picker & Converter'}
         </h1>
-        <p className="text-slate-500 dark:text-slate-400 text-lg">Precision color selection with instant conversion and copy functionality.</p>
+        <p className="text-slate-600 dark:text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
+          Instantly pick, convert, and copy color codes for web design, UI, and digital projects. This free online HEX color picker helps designers and developers convert between HEX, RGB, and HSL formats with one click. Perfect for anyone needing accurate color values for CSS, branding, or creative work.
+        </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">

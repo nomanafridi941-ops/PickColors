@@ -1,6 +1,6 @@
-
 import React, { useState, useRef } from 'react';
 import SEOHead from '../../components/SEOHead';
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 const SAMPLES = [
   { name: 'Nature', url: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=400&auto=format&fit=crop' },
@@ -88,7 +88,8 @@ const ImageExtractor: React.FC<{ useUrl?: boolean }> = ({ useUrl }) => {
         description="Upload images to extract dominant color palettes. AI-powered color extraction from photos for design inspiration."
         url="/tools/extractor"
       />
-      <div className="max-w-6xl mx-auto py-16 px-4">
+      <div className="max-w-7xl mx-auto py-16 px-4">
+      <Breadcrumbs />
       <div className="text-center mb-12">
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-indigo-600 text-white text-3xl mb-6 shadow-xl shadow-indigo-600/20">
           {useUrl ? '🔗' : '📷'}
@@ -151,6 +152,59 @@ const ImageExtractor: React.FC<{ useUrl?: boolean }> = ({ useUrl }) => {
           </div>
         )}
       </div>
+
+      {/* SEO-optimized H1 and intro */}
+      <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4">
+        Pick Color from Image Online
+      </h1>
+      <p className="text-slate-600 dark:text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
+        Instantly extract color palettes from any image. This free online image color picker helps designers and developers get HEX codes from photos, graphics, and screenshots for use in web, UI, and branding projects.
+      </p>
+
+      {/* SEO Content Section */}
+      <section className="prose prose-indigo dark:prose-invert max-w-3xl mx-auto my-12">
+        <h2>What is an Image Color Extractor?</h2>
+        <p>The Image Color Extractor is a tool that lets you upload or link to any image and instantly get a palette of the most prominent colors. It’s perfect for designers, developers, and marketers who want to match website or brand colors to real-world photos or inspiration images.</p>
+        <h2>Who Should Use This Tool?</h2>
+        <ul>
+          <li><strong>Designers</strong>—for building palettes from inspiration images</li>
+          <li><strong>Developers</strong>—for matching UI colors to assets</li>
+          <li><strong>Marketers</strong>—for campaign and ad color matching</li>
+          <li><strong>Content creators</strong>—for social media and presentations</li>
+        </ul>
+        <h2>How to Use the Image Color Extractor</h2>
+        <ol>
+          <li>Upload an image or paste an image URL.</li>
+          <li>Wait for the tool to process and extract the main colors.</li>
+          <li>Copy any HEX code for use in your project.</li>
+        </ol>
+        <h2>Common Mistakes to Avoid</h2>
+        <ul>
+          <li>Using low-quality or blurry images (results may be less accurate)</li>
+          <li>Trying to extract from images with copyright restrictions</li>
+          <li>Not checking color contrast for accessibility</li>
+        </ul>
+        <h2>FAQs</h2>
+        <ul>
+          <li><strong>Q:</strong> Can I use this tool for any image?<br/><strong>A:</strong> Yes, as long as you have the right to use the image.</li>
+          <li><strong>Q:</strong> Is this tool free?<br/><strong>A:</strong> 100% free, no login required.</li>
+          <li><strong>Q:</strong> Can I extract more than 10 colors?<br/><strong>A:</strong> The tool extracts up to 10 prominent colors per image.</li>
+          <li><strong>Q:</strong> Can I use the colors in CSS?<br/><strong>A:</strong> Yes! All codes are CSS-ready.</li>
+        </ul>
+      </section>
+      {/* Related Color Tools Section */}
+      <section className="max-w-3xl mx-auto my-16">
+        <h2 className="text-2xl font-bold mb-4">Related Color Tools</h2>
+        <ul className="grid md:grid-cols-2 gap-4">
+          <li><a href="/tools/picker" className="text-indigo-600 hover:underline">Pick and convert colors with our Color Picker</a></li>
+          <li><a href="/tools/palette" className="text-indigo-600 hover:underline">Generate custom color palettes</a></li>
+          <li><a href="/tools/harmonies" className="text-indigo-600 hover:underline">Create harmonious color schemes</a></li>
+          <li><a href="/tools/contrast" className="text-indigo-600 hover:underline">Check color contrast for accessibility</a></li>
+        </ul>
+      </section>
+
+      {/* Helper text for copy functionality */}
+      <p className="text-xs text-slate-400 mt-2 mb-6">Copy any extracted color code with one click.</p>
 
       {(image || loading) && (
         <div className="grid lg:grid-cols-2 gap-12 animate-in fade-in slide-in-from-bottom-8 duration-700">

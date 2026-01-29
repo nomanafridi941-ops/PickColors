@@ -1,7 +1,7 @@
-
 import React, { useState } from 'react';
 import { GoogleGenAI, Type } from "@google/genai";
 import SEOHead from '../../components/SEOHead';
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 const MoodBoard: React.FC = () => {
   const [keyword, setKeyword] = useState('');
@@ -55,12 +55,18 @@ const MoodBoard: React.FC = () => {
         url="/tools/mood"
       />
       <div className="max-w-7xl mx-auto py-16 px-4">
+      <Breadcrumbs />
       <div className="text-center mb-16">
         <div className="inline-flex items-center gap-3 px-6 py-2 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-full text-xs font-black uppercase tracking-[0.2em] mb-8 shadow-xl shadow-indigo-500/20">
           <span className="w-2 h-2 bg-white rounded-full animate-ping"></span>
           AI Powered Inspiration
         </div>
-        <h1 className="text-5xl md:text-6xl font-black mb-6 tracking-tight">Thematic Mood Board</h1>
+        <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4">
+          AI Mood Board Generator Online
+        </h1>
+        <p className="text-slate-600 dark:text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
+          Instantly generate beautiful, theme-based color palettes using AI. This free online mood board tool helps designers and marketers create unique color schemes inspired by moods, concepts, and trends—perfect for branding, UI, and creative projects.
+        </p>
         <p className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed">
           Unlock professional color palettes by describing any mood, brand concept, or physical environment.
         </p>
@@ -85,6 +91,9 @@ const MoodBoard: React.FC = () => {
             </button>
         </div>
       </div>
+
+      {/* Helper text for copy functionality */}
+      <p className="text-xs text-slate-400 mt-2 mb-6">Copy any mood board color code with one click.</p>
 
       {palette && (
         <div className="space-y-12 animate-in fade-in slide-in-from-bottom-8 duration-1000">

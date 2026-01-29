@@ -1,7 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
 import { generateRandomHex } from '../../utils/colorUtils';
 import SEOHead from '../../components/SEOHead';
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 const RandomPalette: React.FC = () => {
   const [colors, setColors] = useState<{hex: string, locked: boolean}[]>(() => 
@@ -35,7 +35,7 @@ const RandomPalette: React.FC = () => {
         url="/tools/palette"
       />
       <div className="h-[calc(100vh-80px)] w-full flex flex-col">
-      <div className="flex-grow flex flex-col md:flex-row">
+      <Breadcrumbs />
         {colors.map((c, i) => (
           <div 
             key={i} 
@@ -64,6 +64,7 @@ const RandomPalette: React.FC = () => {
       </div>
       <div className="p-8 bg-white dark:bg-slate-950 border-t dark:border-slate-800 flex justify-center items-center gap-8">
         <p className="hidden md:block text-sm font-bold text-slate-400">Press <span className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded border dark:border-slate-700">Space</span> to Shuffle</p>
+        <p className="text-xs text-slate-400 mt-2 mb-6">Copy any palette color code with one click.</p>
         <button 
           onClick={shuffle}
           className="px-10 py-4 bg-indigo-600 text-white rounded-2xl font-black shadow-xl shadow-indigo-600/20 hover:scale-105 active:scale-95 transition-all"

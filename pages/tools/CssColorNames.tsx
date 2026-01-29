@@ -1,7 +1,7 @@
-
 import React, { useState, useMemo } from 'react';
 import { hexToRgb } from '../../utils/colorUtils';
 import SEOHead from '../../components/SEOHead';
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 const CSS_COLORS = [
   { name: 'AliceBlue', hex: '#F0F8FF' }, { name: 'AntiqueWhite', hex: '#FAEBD7' }, { name: 'Aqua', hex: '#00FFFF' },
@@ -93,10 +93,13 @@ const CssColorNames: React.FC = () => {
         url="/tools/css-names"
       />
       <div className="max-w-7xl mx-auto py-16 px-4">
+      <Breadcrumbs />
       <div className="text-center mb-12">
-        <h1 className="text-5xl font-black mb-4 tracking-tight">CSS Color Names Finder</h1>
-        <p className="text-slate-500 max-w-2xl mx-auto text-lg">
-          The ultimate index of all 148 official web colors. Search by name, hex, or find similar colors to your target shade.
+        <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4 text-center">
+          CSS Color Names List Online
+        </h1>
+        <p className="text-slate-600 dark:text-slate-300 text-lg mb-8 max-w-2xl mx-auto text-center">
+          Instantly browse, search, and copy all standard CSS color names and hex codes. This free online color names tool helps designers and developers use named colors for web, UI, and branding projects.
         </p>
       </div>
 
@@ -175,6 +178,8 @@ const CssColorNames: React.FC = () => {
           <p className="mt-4 font-bold">No colors matching your search.</p>
         </div>
       )}
+      {/* Helper text for copy functionality */}
+      <p className="text-xs text-slate-400 mt-2 mb-6">Copy any CSS color name or hex code with one click.</p>
     </div>
     </>
   );

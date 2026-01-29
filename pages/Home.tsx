@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { TOOLS } from '../constants';
@@ -27,13 +26,15 @@ const Home: React.FC = () => {
             Professional Series 2025
           </div>
           
-          <h1 className="text-6xl md:text-8xl font-black text-slate-900 dark:text-white mb-10 tracking-tighter leading-[0.95]">
-            Engineered for <br className="hidden md:block"/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-tr from-indigo-600 via-indigo-500 to-purple-500 dark:from-indigo-400 dark:via-indigo-300 dark:to-purple-300">Visual Perfection.</span>
+          <h1 className="text-5xl md:text-7xl font-black text-slate-900 dark:text-white mb-10 tracking-tighter leading-[0.95]">
+            Free Online Color Tools for Designers and Developers
           </h1>
           
-          <p className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 mb-16 max-w-3xl mx-auto leading-relaxed font-medium">
-            A suite of 16 precision color tools designed for those who demand absolute fidelity and speed. No accounts. No tracking. Pure performance.
+          <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed font-medium">
+            PickColors is your all-in-one color toolkit for web, UI, and creative work. Instantly pick, convert, and generate color palettes, gradients, and harmonies. Our tools include a HEX/RGB/HSL color picker, CSS gradient generator, contrast checker, palette generator, image color extractor, and more. No accounts, no tracking—just fast, accurate color utilities for every creative workflow.
+          </p>
+          <p className="text-base text-slate-500 dark:text-slate-400 mb-8 max-w-2xl mx-auto">
+            Trusted by designers, developers, marketers, and students worldwide. Explore our 16+ tools to boost your productivity and creativity—free, forever.
           </p>
           
           <div className="flex flex-wrap justify-center gap-5">
