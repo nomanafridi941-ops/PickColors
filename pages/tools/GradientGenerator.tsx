@@ -153,6 +153,7 @@ const GradientGenerator: React.FC = () => {
       {/* Helper text for copy functionality */}
       <p className="text-xs text-slate-400 mt-2 mb-6">Copy the CSS gradient code with one click.</p>
     </div>
+  </div>
   );
 };
 
