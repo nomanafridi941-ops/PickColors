@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { TOOLS } from '../constants';
 import { ToolCategory } from '../types';
-import AdPlaceholder from './AdPlaceholder';
+// ...existing code...
 
 const categories: ToolCategory[] = ['Design Tools', 'Converters', 'Accessibility', 'Image Tools', 'Discovery'];
 
@@ -118,7 +118,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <main className="flex-grow">
         {children}
         <div className="max-w-7xl mx-auto px-4 lg:px-8 mt-16 mb-8">
-           <AdPlaceholder type="horizontal" className="opacity-80" />
+// ...existing code...
         </div>
       </main>
 

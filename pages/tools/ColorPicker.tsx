@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { hexToRgb, rgbToHex, rgbToHsl, hslToRgb } from '../../utils/colorUtils';
-import AdPlaceholder from '../../components/AdPlaceholder';
+// ...existing code...
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
 
@@ -153,7 +153,7 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ initialMode }) => {
             </div>
           </div>
 
-          <AdPlaceholder type="sidebar" className="mt-4" />
+// ...existing code...
         </div>
       </div>
 
@@ -169,7 +169,7 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ initialMode }) => {
             </div>
         </div>
         
-        <AdPlaceholder type="horizontal" />
+      // ...existing code...
       </div>
       </div>
     </>
