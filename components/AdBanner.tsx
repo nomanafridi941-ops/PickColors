@@ -8,18 +8,23 @@ interface AdBannerProps {
 }
 
 const AdBanner: React.FC<AdBannerProps> = ({ adKey, width, height, id }) => {
-  const adRef = useRef<HTMLDivElement>(null);
-  const uniqueId = id || `ad-${adKey}-${Math.random().toString(36).substr(2, 9)}`;
+  const containerRef = useRef<HTMLDivElement>(null);
+  const loadedRef = useRef(false);
 
   useEffect(() => {
-    if (!adRef.current) return;
-    
-    // Clear any existing content
-    adRef.current.innerHTML = '';
+    if (!containerRef.current || loadedRef.current) return;
+    loadedRef.current = true;
 
-    // Set unique atOptions on window with unique key
-    const optionsKey = `atOptions_${uniqueId.replace(/-/g, '_')}`;
-    (window as any)[optionsKey] = {
+    // Create a unique container ID
+    const containerId = id || `ad-container-${Date.now()}`;
+    
+    // Create the ad container div
+    const adContainer = document.createElement('div');
+    adContainer.id = containerId;
+    containerRef.current.appendChild(adContainer);
+
+    // Set atOptions globally before loading script
+    (window as any).atOptions = {
       'key': adKey,
       'format': 'iframe',
       'height': height,
@@ -27,23 +32,21 @@ const AdBanner: React.FC<AdBannerProps> = ({ adKey, width, height, id }) => {
       'params': {}
     };
 
-    // Create options script that references the unique options
-    const optionsScript = document.createElement('script');
-    optionsScript.innerHTML = `atOptions = window['${optionsKey}'];`;
-    adRef.current.appendChild(optionsScript);
+    // Load the invoke script
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = `//www.highperformanceformat.com/${adKey}/invoke.js`;
+    script.async = true;
+    containerRef.current.appendChild(script);
 
-    // Create invoke script
-    const invokeScript = document.createElement('script');
-    invokeScript.src = `https://www.highperformanceformat.com/${adKey}/invoke.js`;
-    invokeScript.async = true;
-    adRef.current.appendChild(invokeScript);
-
-  }, [adKey, width, height, uniqueId]);
+    return () => {
+      loadedRef.current = false;
+    };
+  }, [adKey, width, height, id]);
 
   return (
     <div 
-      ref={adRef}
-      id={uniqueId}
+      ref={containerRef}
       style={{ 
         width, 
         height, 
@@ -51,7 +54,7 @@ const AdBanner: React.FC<AdBannerProps> = ({ adKey, width, height, id }) => {
         minHeight: height,
         display: 'flex', 
         alignItems: 'center', 
-        justifyContent: 'center' 
+        justifyContent: 'center'
       }}
     />
   );

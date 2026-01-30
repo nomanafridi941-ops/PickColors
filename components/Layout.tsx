@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { TOOLS } from '../constants';
 import { ToolCategory } from '../types';
-import AdBanner from './AdBanner';
 
 
 const categories: ToolCategory[] = ['Design Tools', 'Converters', 'Accessibility', 'Image Tools', 'Discovery'];
@@ -121,8 +120,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       </main>
 
       {/* 728x90 Banner Ad - Above Footer */}
-      <div className="flex justify-center py-6 bg-slate-50 dark:bg-slate-900">
-        <AdBanner adKey="f4583a41ba86b5c6c7515106fb78a5bb" width={728} height={90} id="ad-above-footer" />
+      <div id="footer-ad-container" className="flex justify-center py-6 bg-slate-50 dark:bg-slate-900">
+        <div id="footer-ad-slot" style={{ width: 728, height: 90, minWidth: 728, minHeight: 90 }}></div>
       </div>
 
       <footer className="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800/50 py-24">

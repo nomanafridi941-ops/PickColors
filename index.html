@@ -114,5 +114,28 @@
 <script type="module" src="/index.tsx"></script>
   <!-- Third-party ad tag added per request -->
   <script src="https://3nbf4.com/act/files/tag.min.js?z=10542486" data-cfasync="false" async></script>
+
+  <!-- Footer Ad Script - loads after React renders -->
+  <script>
+    function loadFooterAd() {
+      var slot = document.getElementById('footer-ad-slot');
+      if (slot && !slot.hasChildNodes()) {
+        window.atOptions = {
+          'key': 'f4583a41ba86b5c6c7515106fb78a5bb',
+          'format': 'iframe',
+          'height': 90,
+          'width': 728,
+          'params': {}
+        };
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = '//www.highperformanceformat.com/f4583a41ba86b5c6c7515106fb78a5bb/invoke.js';
+        slot.appendChild(s);
+      } else {
+        setTimeout(loadFooterAd, 500);
+      }
+    }
+    setTimeout(loadFooterAd, 1000);
+  </script>
 </body>
 </html>
