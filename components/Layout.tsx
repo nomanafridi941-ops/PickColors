@@ -115,11 +115,40 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         </div>
       </header>
 
-      <main className="flex-grow">
-        {children}
-        <div className="max-w-7xl mx-auto px-4 lg:px-8 mt-16 mb-8">
 
-        </div>
+      {/* 728x90 Ad Banner (visible on desktop, below header) */}
+      <div className="w-full flex justify-center bg-transparent mt-4 mb-4">
+        <div id="ad-728x90"></div>
+        <script dangerouslySetInnerHTML={{__html:`
+          atOptions = {
+            'key' : 'f4583a41ba86b5c6c7515106fb78a5bb',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {{}}
+          };
+        `}} />
+        <script src="https://www.highperformanceformat.com/f4583a41ba86b5c6c7515106fb78a5bb/invoke.js"></script>
+      </div>
+
+      <main className="flex-grow flex">
+        {/* Sidebar 160x600 Ad (desktop only) */}
+        <aside className="hidden lg:block w-[160px] flex-shrink-0">
+          <div id="ad-160x600" className="sticky top-24"></div>
+          <script dangerouslySetInnerHTML={{__html:`
+            atOptions = {
+              'key' : 'f1249ff2c2437f2386bd35ecf0cee435',
+              'format' : 'iframe',
+              'height' : 600,
+              'width' : 160,
+              'params' : {{}}
+            };
+          `}} />
+          <script src="https://www.highperformanceformat.com/f1249ff2c2437f2386bd35ecf0cee435/invoke.js"></script>
+        </aside>
+        <section className="flex-1">
+          {children}
+        </section>
       </main>
 
       <footer className="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800/50 py-24">
