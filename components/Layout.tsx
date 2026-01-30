@@ -115,40 +115,42 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         </div>
       </header>
 
+      <main className="flex-grow">
+        {/* 728x90 Banner Ad - Top of Content */}
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 pt-8 flex justify-center">
+          <div id="ad-banner-728x90" style={{ width: 728, height: 90, background: '#f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: 12, overflow: 'hidden' }}>
+            <script dangerouslySetInnerHTML={{ __html: `
+              atOptions = {
+                'key' : 'f4583a41ba86b5c6c7515106fb78a5bb',
+                'format' : 'iframe',
+                'height' : 90,
+                'width' : 728,
+                'params' : {}
+              };
+            ` }} />
+            <script src="https://www.highperformanceformat.com/f4583a41ba86b5c6c7515106fb78a5bb/invoke.js" async />
+          </div>
+        </div>
 
-      {/* 728x90 Ad Banner (visible on desktop, below header) */}
-      <div className="w-full flex justify-center bg-transparent mt-4 mb-4">
-        <div id="ad-728x90"></div>
-        <script dangerouslySetInnerHTML={{__html:`
-          atOptions = {
-            'key' : 'f4583a41ba86b5c6c7515106fb78a5bb',
-            'format' : 'iframe',
-            'height' : 90,
-            'width' : 728,
-            'params' : {{}}
-          };
-        `}} />
-        <script src="https://www.highperformanceformat.com/f4583a41ba86b5c6c7515106fb78a5bb/invoke.js"></script>
-      </div>
-
-      <main className="flex-grow flex">
-        {/* Sidebar 160x600 Ad (desktop only) */}
-        <aside className="hidden lg:block w-[160px] flex-shrink-0">
-          <div id="ad-160x600" className="sticky top-24"></div>
-          <script dangerouslySetInnerHTML={{__html:`
-            atOptions = {
-              'key' : 'f1249ff2c2437f2386bd35ecf0cee435',
-              'format' : 'iframe',
-              'height' : 600,
-              'width' : 160,
-              'params' : {{}}
-            };
-          `}} />
-          <script src="https://www.highperformanceformat.com/f1249ff2c2437f2386bd35ecf0cee435/invoke.js"></script>
-        </aside>
-        <section className="flex-1">
-          {children}
-        </section>
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 flex flex-col lg:flex-row gap-8">
+          {/* Main Content */}
+          <div className="flex-1">{children}</div>
+          {/* 160x600 Sidebar Ad */}
+          <aside className="hidden lg:block" style={{ width: 160, minHeight: 600 }}>
+            <div id="ad-sidebar-160x600" style={{ width: 160, height: 600, background: '#f1f5f9', borderRadius: 12, overflow: 'hidden', position: 'sticky', top: 100 }}>
+              <script dangerouslySetInnerHTML={{ __html: `
+                atOptions = {
+                  'key' : 'f1249ff2c2437f2386bd35ecf0cee435',
+                  'format' : 'iframe',
+                  'height' : 600,
+                  'width' : 160,
+                  'params' : {}
+                };
+              ` }} />
+              <script src="https://www.highperformanceformat.com/f1249ff2c2437f2386bd35ecf0cee435/invoke.js" async />
+            </div>
+          </aside>
+        </div>
       </main>
 
       <footer className="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800/50 py-24">
