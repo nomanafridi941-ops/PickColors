@@ -71,7 +71,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Tools Grid */}
-      <section id="tools" className="py-32 px-4 max-w-7xl mx-auto border-t border-slate-100 dark:border-slate-900">
+      <section id="tools" className="py-12 px-4 max-w-7xl mx-auto border-t border-slate-100 dark:border-slate-900">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div className="max-w-2xl">
             <h2 className="text-4xl font-black text-slate-900 dark:text-white mb-4 tracking-tight uppercase tracking-widest text-sm text-indigo-500 mb-6">The Catalog</h2>
