@@ -30,11 +30,8 @@ const Home: React.FC = () => {
             Free Online Color Tools for Designers and Developers
           </h1>
           
-          <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed font-medium">
-            PickColors is your all-in-one color toolkit for web, UI, and creative work. Instantly pick, convert, and generate color palettes, gradients, and harmonies. Our tools include a HEX/RGB/HSL color picker, CSS gradient generator, contrast checker, palette generator, image color extractor, and more. No accounts, no tracking—just fast, accurate color utilities for every creative workflow.
-          </p>
-          <p className="text-base text-slate-500 dark:text-slate-400 mb-8 max-w-2xl mx-auto">
-            Trusted by designers, developers, marketers, and students worldwide. Explore our 16+ tools to boost your productivity and creativity—free, forever.
+          <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-6 max-w-3xl mx-auto leading-relaxed font-medium">
+            PickColors is your all-in-one color toolkit. Pick, convert, and generate palettes, gradients, and harmonies—fast, accurate, and free.
           </p>
           
           <div className="flex flex-wrap justify-center gap-5">
@@ -71,7 +68,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Tools Grid */}
-      <section id="tools" className="py-0 px-4 max-w-7xl mx-auto border-t border-slate-100 dark:border-slate-900">
+      <section id="tools" className="py- px-4 max-w-7xl mx-auto border-t border-slate-100 dark:border-slate-900">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div className="max-w-2xl">
             <h2 className="text-4xl font-black text-slate-900 dark:text-white mb-4 tracking-tight uppercase tracking-widest text-sm text-indigo-500 mb-6">The Catalog</h2>
