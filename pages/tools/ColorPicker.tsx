@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { hexToRgb, rgbToHex, rgbToHsl, hslToRgb } from '../../utils/colorUtils';
-// ...existing code...
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
 
@@ -153,7 +152,7 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ initialMode }) => {
             </div>
           </div>
 
-// ...existing code...
+
         </div>
       </div>
 
@@ -169,7 +168,7 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ initialMode }) => {
             </div>
         </div>
         
-      // ...existing code...
+
       </div>
       </div>
     </>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { TOOLS } from '../constants';
-// ...existing code...
+
 import SEOHead from '../components/SEOHead';
 
 const Home: React.FC = () => {
@@ -47,7 +47,7 @@ const Home: React.FC = () => {
           </div>
 
           <div className="mt-20 max-w-4xl mx-auto px-4">
-// ...existing code...
+
           </div>
         </div>
       </section>
