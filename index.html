@@ -107,7 +107,42 @@
   </script>
 </head>
 <body class="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+  <!-- 728x90 Banner Ad -->
+  <div style="display:flex;justify-content:center;padding:16px 0;background:#f8fafc;">
+    <script>
+      atOptions = {
+        'key' : 'f4583a41ba86b5c6c7515106fb78a5bb',
+        'format' : 'iframe',
+        'height' : 90,
+        'width' : 728,
+        'params' : {}
+      };
+    </script>
+    <script src="https://www.highperformanceformat.com/f4583a41ba86b5c6c7515106fb78a5bb/invoke.js"></script>
+  </div>
+
   <div id="root"></div>
+
+  <!-- 160x600 Sidebar Ad (fixed right) -->
+  <div style="position:fixed;right:8px;top:100px;z-index:9999;display:none;" id="sidebar-ad-160x600">
+    <script>
+      atOptions = {
+        'key' : 'f1249ff2c2437f2386bd35ecf0cee435',
+        'format' : 'iframe',
+        'height' : 600,
+        'width' : 160,
+        'params' : {}
+      };
+    </script>
+    <script src="https://www.highperformanceformat.com/f1249ff2c2437f2386bd35ecf0cee435/invoke.js"></script>
+  </div>
+  <script>
+    // Show sidebar ad only on wide screens
+    if (window.innerWidth >= 1400) {
+      document.getElementById('sidebar-ad-160x600').style.display = 'block';
+    }
+  </script>
+
   <!-- CRITICAL: Entry point script added -->
   <script type="module" src="./index.tsx"></script>
 <script type="module" src="/index.tsx"></script>
