@@ -107,39 +107,23 @@
   </script>
 </head>
 <body class="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100">
-  <!-- 728x90 Banner Ad -->
+  <!-- 728x90 Banner Ad Placeholder -->
   <div style="display:flex;justify-content:center;padding:16px 0;background:#f8fafc;">
-    <script>
-      atOptions = {
-        'key' : 'f4583a41ba86b5c6c7515106fb78a5bb',
-        'format' : 'iframe',
-        'height' : 90,
-        'width' : 728,
-        'params' : {}
-      };
-    </script>
-    <script src="https://www.highperformanceformat.com/f4583a41ba86b5c6c7515106fb78a5bb/invoke.js"></script>
+    <div style="width:728px;height:90px;background:#e2e8f0;border:2px dashed #94a3b8;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#64748b;font-size:14px;font-weight:600;">
+      Ad 728x90 (Top)
+    </div>
   </div>
 
   <div id="root"></div>
 
-  <!-- 160x600 Sidebar Ad (fixed right) -->
-  <div style="position:fixed;right:8px;top:100px;z-index:9999;display:none;" id="sidebar-ad-160x600">
-    <script>
-      atOptions = {
-        'key' : 'f1249ff2c2437f2386bd35ecf0cee435',
-        'format' : 'iframe',
-        'height' : 600,
-        'width' : 160,
-        'params' : {}
-      };
-    </script>
-    <script src="https://www.highperformanceformat.com/f1249ff2c2437f2386bd35ecf0cee435/invoke.js"></script>
+  <!-- 160x600 Sidebar Ad Placeholder (fixed right) -->
+  <div style="position:fixed;right:8px;top:100px;z-index:9999;width:160px;height:600px;background:#e2e8f0;border:2px dashed #94a3b8;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#64748b;font-size:14px;font-weight:600;writing-mode:vertical-rl;text-orientation:mixed;" id="sidebar-ad-160x600">
+    Ad 160x600 (Sidebar)
   </div>
   <script>
     // Show sidebar ad only on wide screens
-    if (window.innerWidth >= 1400) {
-      document.getElementById('sidebar-ad-160x600').style.display = 'block';
+    if (window.innerWidth < 1400) {
+      document.getElementById('sidebar-ad-160x600').style.display = 'none';
     }
   </script>
 
