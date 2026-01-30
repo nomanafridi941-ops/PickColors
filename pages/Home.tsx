@@ -46,6 +46,22 @@ const Home: React.FC = () => {
             </Link>
           </div>
 
+          {/* 728x90 Banner Ad */}
+          <div className="mt-10 flex justify-center">
+            <div id="ad-banner-728x90-home" style={{ minWidth: 728, minHeight: 90 }}>
+              <script dangerouslySetInnerHTML={{ __html: `
+                atOptions = {
+                  'key' : 'f4583a41ba86b5c6c7515106fb78a5bb',
+                  'format' : 'iframe',
+                  'height' : 90,
+                  'width' : 728,
+                  'params' : {}
+                };
+              ` }} />
+              <script src="https://www.highperformanceformat.com/f4583a41ba86b5c6c7515106fb78a5bb/invoke.js" async />
+            </div>
+          </div>
+
           <div className="mt-20 max-w-4xl mx-auto px-4">
 
           </div>
