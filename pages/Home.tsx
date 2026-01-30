@@ -46,7 +46,7 @@ const Home: React.FC = () => {
 
           {/* 728x90 Banner Ad */}
           <div className="mt-8 flex justify-center">
-            <AdBanner adKey="f4583a41ba86b5c6c7515106fb78a5bb" width={728} height={90} />
+            <AdBanner adKey="f4583a41ba86b5c6c7515106fb78a5bb" width={728} height={90} id="ad-home-hero" />
           </div>
         </div>
       </section>

@@ -122,7 +122,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
       {/* 728x90 Banner Ad - Above Footer */}
       <div className="flex justify-center py-6 bg-slate-50 dark:bg-slate-900">
-        <AdBanner adKey="f4583a41ba86b5c6c7515106fb78a5bb" width={728} height={90} />
+        <AdBanner adKey="f4583a41ba86b5c6c7515106fb78a5bb" width={728} height={90} id="ad-above-footer" />
       </div>
 
       <footer className="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800/50 py-24">

@@ -4,10 +4,12 @@ interface AdBannerProps {
   adKey: string;
   width: number;
   height: number;
+  id?: string;
 }
 
-const AdBanner: React.FC<AdBannerProps> = ({ adKey, width, height }) => {
+const AdBanner: React.FC<AdBannerProps> = ({ adKey, width, height, id }) => {
   const adRef = useRef<HTMLDivElement>(null);
+  const uniqueId = id || `ad-${adKey}-${Math.random().toString(36).substr(2, 9)}`;
 
   useEffect(() => {
     if (!adRef.current) return;
@@ -15,17 +17,19 @@ const AdBanner: React.FC<AdBannerProps> = ({ adKey, width, height }) => {
     // Clear any existing content
     adRef.current.innerHTML = '';
 
-    // Create atOptions script
+    // Set unique atOptions on window with unique key
+    const optionsKey = `atOptions_${uniqueId.replace(/-/g, '_')}`;
+    (window as any)[optionsKey] = {
+      'key': adKey,
+      'format': 'iframe',
+      'height': height,
+      'width': width,
+      'params': {}
+    };
+
+    // Create options script that references the unique options
     const optionsScript = document.createElement('script');
-    optionsScript.innerHTML = `
-      atOptions = {
-        'key' : '${adKey}',
-        'format' : 'iframe',
-        'height' : ${height},
-        'width' : ${width},
-        'params' : {}
-      };
-    `;
+    optionsScript.innerHTML = `atOptions = window['${optionsKey}'];`;
     adRef.current.appendChild(optionsScript);
 
     // Create invoke script
@@ -34,20 +38,17 @@ const AdBanner: React.FC<AdBannerProps> = ({ adKey, width, height }) => {
     invokeScript.async = true;
     adRef.current.appendChild(invokeScript);
 
-    return () => {
-      // Cleanup on unmount
-      if (adRef.current) {
-        adRef.current.innerHTML = '';
-      }
-    };
-  }, [adKey, width, height]);
+  }, [adKey, width, height, uniqueId]);
 
   return (
     <div 
-      ref={adRef} 
+      ref={adRef}
+      id={uniqueId}
       style={{ 
         width, 
         height, 
+        minWidth: width,
+        minHeight: height,
         display: 'flex', 
         alignItems: 'center', 
         justifyContent: 'center' 
