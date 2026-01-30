@@ -119,6 +119,27 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         {children}
       </main>
 
+      {/* 728x90 Banner Ad Placeholder - Above Footer */}
+      <div className="flex justify-center py-6 bg-slate-50 dark:bg-slate-900">
+        <div 
+          style={{ 
+            width: 728, 
+            height: 90, 
+            background: '#e2e8f0', 
+            border: '2px dashed #94a3b8', 
+            borderRadius: 12, 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'center',
+            color: '#64748b',
+            fontSize: 14,
+            fontWeight: 600
+          }}
+        >
+          Ad 728x90 (Above Footer)
+        </div>
+      </div>
+
       <footer className="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800/50 py-24">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="flex flex-col lg:flex-row justify-between gap-16">
