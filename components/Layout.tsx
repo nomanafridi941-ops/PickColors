@@ -119,24 +119,19 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         {children}
       </main>
 
-      {/* 728x90 Banner Ad Placeholder - Above Footer */}
+      {/* 728x90 Banner Ad - Above Footer */}
       <div className="flex justify-center py-6 bg-slate-50 dark:bg-slate-900">
-        <div 
-          style={{ 
-            width: 728, 
-            height: 90, 
-            background: '#e2e8f0', 
-            border: '2px dashed #94a3b8', 
-            borderRadius: 12, 
-            display: 'flex', 
-            alignItems: 'center', 
-            justifyContent: 'center',
-            color: '#64748b',
-            fontSize: 14,
-            fontWeight: 600
-          }}
-        >
-          Ad 728x90 (Above Footer)
+        <div id="ad-banner-728x90-footer">
+          <script dangerouslySetInnerHTML={{ __html: `
+            atOptions = {
+              'key' : 'f4583a41ba86b5c6c7515106fb78a5bb',
+              'format' : 'iframe',
+              'height' : 90,
+              'width' : 728,
+              'params' : {}
+            };
+          ` }} />
+          <script src="https://www.highperformanceformat.com/f4583a41ba86b5c6c7515106fb78a5bb/invoke.js" async />
         </div>
       </div>
 

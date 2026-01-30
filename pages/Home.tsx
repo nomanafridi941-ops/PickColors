@@ -45,23 +45,17 @@ const Home: React.FC = () => {
 
           {/* 728x90 Banner Ad */}
           <div className="mt-8 flex justify-center">
-            <div 
-              id="ad-banner-728x90-home" 
-              style={{ 
-                width: 728, 
-                height: 90, 
-                background: '#e2e8f0', 
-                border: '2px dashed #94a3b8', 
-                borderRadius: 12, 
-                display: 'flex', 
-                alignItems: 'center', 
-                justifyContent: 'center',
-                color: '#64748b',
-                fontSize: 14,
-                fontWeight: 600
-              }}
-            >
-              Ad 728x90
+            <div id="ad-banner-728x90-home">
+              <script dangerouslySetInnerHTML={{ __html: `
+                atOptions = {
+                  'key' : 'f4583a41ba86b5c6c7515106fb78a5bb',
+                  'format' : 'iframe',
+                  'height' : 90,
+                  'width' : 728,
+                  'params' : {}
+                };
+              ` }} />
+              <script src="https://www.highperformanceformat.com/f4583a41ba86b5c6c7515106fb78a5bb/invoke.js" async />
             </div>
           </div>
         </div>
