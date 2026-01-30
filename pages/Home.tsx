@@ -47,7 +47,7 @@ const Home: React.FC = () => {
           </div>
 
           {/* 728x90 Banner Ad */}
-          <div className="mt-10 flex justify-center">
+          <div className="mt-8 flex justify-center">
             <div 
               id="ad-banner-728x90-home" 
               style={{ 
@@ -66,10 +66,6 @@ const Home: React.FC = () => {
             >
               Ad 728x90
             </div>
-          </div>
-
-          <div className="mt-20 max-w-4xl mx-auto px-4">
-
           </div>
         </div>
       </section>
