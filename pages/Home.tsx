@@ -4,6 +4,8 @@ import { TOOLS } from '../constants';
 
 import SEOHead from '../components/SEOHead';
 import AdBanner from '../components/AdBanner';
+import MediumRectangle300x250 from '../components/Ads/MediumRectangle300x250';
+import InlineSmallLeader from '../components/Ads/InlineSmallLeader';
 
 const Home: React.FC = () => {
   return (
