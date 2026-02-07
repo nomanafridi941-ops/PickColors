@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { getShadesAndTints } from '../../utils/colorUtils';
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
+import ToolsAdRow from '../../components/Ads/ToolsAdRow';
 
 const ColorFinder: React.FC = () => {
   const [hex, setHex] = useState('#6366F1');
@@ -39,9 +40,12 @@ const ColorFinder: React.FC = () => {
       <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4 text-center">
         Find Color Shades & Tints Online
       </h1>
+
       <p className="text-slate-600 dark:text-slate-300 text-lg mb-8 max-w-2xl mx-auto text-center">
         Instantly discover lighter tints and darker shades for any color. This free online color finder helps designers and developers create harmonious color variations for web, UI, and branding projects.
       </p>
+
+      <ToolsAdRow />
 
       <p className="text-xs text-slate-400 mt-2 mb-6">Copy any shade or tint color code with one click.</p>
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { hexToRgb, getContrastRatio } from '../../utils/colorUtils';
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
+import ToolsAdRow from '../../components/Ads/ToolsAdRow';
 
 // Added interface to support fullAudit prop from route configuration
 interface ContrastCheckerProps {
@@ -40,6 +41,8 @@ const ContrastChecker: React.FC<ContrastCheckerProps> = ({ fullAudit }) => {
         </p>
       </div>
       
+      <ToolsAdRow />
+
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
         <div className="lg:col-span-5 space-y-8">
           <div className="p-8 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-[2.5rem] shadow-sm">

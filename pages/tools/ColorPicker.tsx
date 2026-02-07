@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { hexToRgb, rgbToHex, rgbToHsl, hslToRgb } from '../../utils/colorUtils';
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
+import ToolsAdRow from '../../components/Ads/ToolsAdRow';
 
 // Added interface to support initialMode prop from routes
 interface ColorPickerProps {
@@ -66,6 +67,8 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ initialMode }) => {
           Instantly pick, convert, and copy color codes for web design, UI, and digital projects. This free online HEX color picker helps designers and developers convert between HEX, RGB, and HSL formats with one click. Perfect for anyone needing accurate color values for CSS, branding, or creative work.
         </p>
       </div>
+
+      <ToolsAdRow />
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="lg:col-span-7 space-y-8">

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
+import ToolsAdRow from '../../components/Ads/ToolsAdRow';
 
 const ReadabilityTester: React.FC = () => {
   const [bg, setBg] = useState('#FFFFFF');
@@ -23,6 +24,8 @@ const ReadabilityTester: React.FC = () => {
         Instantly preview and test text readability across different font sizes, colors, and backgrounds. This free online readability tester helps designers and developers ensure their content is easy to read for everyone.
       </p>
       
+      <ToolsAdRow />
+
       <div className="grid lg:grid-cols-4 gap-8 mb-12">
         <div className="p-6 bg-white dark:bg-slate-900 rounded-2xl border dark:border-slate-800">
           <label className="block text-xs font-bold uppercase mb-2">Background</label>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { generateRandomHex } from '../../utils/colorUtils';
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
+import ToolsAdRow from '../../components/Ads/ToolsAdRow';
 
 const RandomPalette: React.FC = () => {
   const [colors, setColors] = useState<{hex: string, locked: boolean}[]>(() => 
@@ -36,6 +37,7 @@ const RandomPalette: React.FC = () => {
       />
       <div className="h-[calc(100vh-80px)] w-full flex flex-col">
       <Breadcrumbs />
+      <ToolsAdRow />
         {colors.map((c, i) => (
           <div 
             key={i} 

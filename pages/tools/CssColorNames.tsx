@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { hexToRgb } from '../../utils/colorUtils';
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
+import ToolsAdRow from '../../components/Ads/ToolsAdRow';
 
 const CSS_COLORS = [
   { name: 'AliceBlue', hex: '#F0F8FF' }, { name: 'AntiqueWhite', hex: '#FAEBD7' }, { name: 'Aqua', hex: '#00FFFF' },
@@ -102,6 +103,8 @@ const CssColorNames: React.FC = () => {
           Instantly browse, search, and copy all standard CSS color names and hex codes. This free online color names tool helps designers and developers use named colors for web, UI, and branding projects.
         </p>
       </div>
+
+      <ToolsAdRow />
 
       <div className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border dark:border-slate-800 shadow-2xl shadow-indigo-500/5 mb-16 max-w-4xl mx-auto">
         <div className="grid md:grid-cols-2 gap-8">

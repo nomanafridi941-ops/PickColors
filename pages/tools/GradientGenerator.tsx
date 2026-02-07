@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
+import ToolsAdRow from '../../components/Ads/ToolsAdRow';
 
 interface ColorStop {
   id: string;
@@ -58,6 +59,8 @@ const GradientGenerator: React.FC = () => {
         <h1 className="text-5xl font-black mb-4 tracking-tight">Pro Gradient Designer</h1>
         <p className="text-slate-500 max-w-xl mx-auto text-lg">Create complex multi-stop CSS gradients with precision control and live code generation.</p>
       </div>
+
+      <ToolsAdRow />
 
       <div className="grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-7 space-y-8">
