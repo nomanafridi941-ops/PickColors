@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { hexToRgb, getContrastRatio } from '../../utils/colorUtils';
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
-import ToolsAdRow from '../../components/Ads/ToolsAdRow';
+import ToolsAdRow from '../../components/Ads/ToolsAdRow.tsx';
 
 // Added interface to support fullAudit prop from route configuration
 interface ContrastCheckerProps {

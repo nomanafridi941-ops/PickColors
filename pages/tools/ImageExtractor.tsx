@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
-import ToolsAdRow from '../../components/Ads/ToolsAdRow';
+import ToolsAdRow from '../../components/Ads/ToolsAdRow.tsx';
 
 const SAMPLES = [
   { name: 'Nature', url: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=400&auto=format&fit=crop' },

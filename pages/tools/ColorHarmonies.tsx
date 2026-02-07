@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { getHarmonies } from '../../utils/colorUtils';
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
-import ToolsAdRow from '../../components/Ads/ToolsAdRow';
+import ToolsAdRow from '../../components/Ads/ToolsAdRow.tsx';
 
 const ColorHarmonies: React.FC = () => {
   const [baseColor, setBaseColor] = useState('#6366F1');

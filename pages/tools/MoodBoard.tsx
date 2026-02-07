@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { GoogleGenAI, Type } from "@google/genai";
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
-import ToolsAdRow from '../../components/Ads/ToolsAdRow';
+import ToolsAdRow from '../../components/Ads/ToolsAdRow.tsx';
 
 const MoodBoard: React.FC = () => {
   const [keyword, setKeyword] = useState('');

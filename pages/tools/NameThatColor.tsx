@@ -3,7 +3,7 @@ import { COLOR_NAMES_MAP } from '../../constants';
 import { hexToRgb } from '../../utils/colorUtils';
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
-import ToolsAdRow from '../../components/Ads/ToolsAdRow';
+import ToolsAdRow from '../../components/Ads/ToolsAdRow.tsx';
 
 const NameThatColor: React.FC = () => {
   const [hex, setHex] = useState('#6366F1');
