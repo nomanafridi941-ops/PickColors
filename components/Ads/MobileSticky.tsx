@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import AdIFrame from './AdIFrame';
 
 const STORAGE_KEY = 'hide_ad_mobile_sticky_v1';
 
@@ -20,12 +21,12 @@ const MobileSticky: React.FC = () => {
 
   return (
     <div className="lg:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-50">
-      <div className="w-[320px] h-[50px] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl flex items-center justify-between px-3 shadow-2xl">
-        <div className="text-sm font-bold">320 x 50</div>
+      <div className="w-[320px] h-[50px] bg-transparent rounded-xl flex items-center justify-between px-0 shadow-2xl">
+        <AdIFrame adKey="f4583a41ba86b5c6c7515106fb78a5bb" width={320} height={50} id="ad-mobile-320x50" />
         <button
           aria-label="Close mobile ad"
           onClick={() => { localStorage.setItem(STORAGE_KEY, '1'); setHidden(true); }}
-          className="text-xs text-slate-500 ml-4"
+          className="absolute top-[-6px] right-[-6px] w-6 h-6 bg-white rounded-full shadow text-xs flex items-center justify-center"
         >
           ✕
         </button>
