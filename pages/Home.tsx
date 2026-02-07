@@ -4,6 +4,8 @@ import { TOOLS } from '../constants';
 
 import SEOHead from '../components/SEOHead';
 import AdBanner from '../components/AdBanner';
+import HeroBillboard from '../components/Ads/HeroBillboard';
+import InlineSmallLeader from '../components/Ads/InlineSmallLeader';
 
 const Home: React.FC = () => {
   return (
@@ -14,6 +16,7 @@ const Home: React.FC = () => {
         url="/"
       />
       {/* Hero Section */}
+      <HeroBillboard />
       <section className="relative pt-32 pb-24 px-4 overflow-hidden">
         {/* Dynamic Background Elements */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 overflow-hidden">
@@ -63,6 +66,7 @@ const Home: React.FC = () => {
           </p>
         </div>
         
+        <InlineSmallLeader />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {TOOLS.map((tool) => (
             <Link 

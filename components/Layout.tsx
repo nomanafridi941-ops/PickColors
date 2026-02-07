@@ -3,6 +3,9 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { TOOLS } from '../constants';
 import { ToolCategory } from '../types';
+import SocialBar from './Ads/SocialBar';
+import SidebarSkyscraper from './Ads/SidebarSkyscraper';
+import MobileSticky from './Ads/MobileSticky';
 
 
 const categories: ToolCategory[] = ['Design Tools', 'Converters', 'Accessibility', 'Image Tools', 'Discovery'];
@@ -52,6 +55,10 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   return (
     <div className="min-h-screen flex flex-col transition-colors duration-300 selection:bg-indigo-500/20">
+      {/* Non-intrusive ad placeholders (desktop/mobile) */}
+      <SocialBar />
+      <SidebarSkyscraper />
+      <MobileSticky />
       <header className="glass border-b border-slate-200 dark:border-slate-800/50 sticky top-0 z-[100]">
         <div className="max-w-7xl mx-auto px-4 lg:px-8 h-20 flex items-center justify-between">
           <Link to="/" className="group flex items-center gap-4">
