@@ -4,8 +4,6 @@ import { TOOLS } from '../constants';
 
 import SEOHead from '../components/SEOHead';
 import AdBanner from '../components/AdBanner';
-import MediumRectangle300x250 from '../components/Ads/MediumRectangle300x250';
-import InlineSmallLeader from '../components/Ads/InlineSmallLeader';
 
 const Home: React.FC = () => {
   return (
@@ -52,7 +50,6 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
-        <MediumRectangle300x250 />
 
       {/* Tools Grid */}
       <section id="tools" className="py- px-4 max-w-7xl mx-auto border-t border-slate-100 dark:border-slate-900">
