@@ -85,6 +85,39 @@
   <div id="root"></div>
 
   <!-- CRITICAL: Entry point script added -->
+  <!-- Runtime error detector (shows overlay and captures errors if app fails to mount) -->
+  <script>
+    (function(){
+      try{
+        window.__APP_ERRORS__ = [];
+        window.addEventListener('error', function(e){
+          try{ window.__APP_ERRORS__.push((e && e.message) ? e.message + ' — ' + (e.filename||'') + ':' + (e.lineno||'') : String(e)); }catch(e){}
+        });
+        window.addEventListener('unhandledrejection', function(ev){
+          try{ var reason = ev && ev.reason ? (ev.reason.message || String(ev.reason)) : 'unhandled rejection'; window.__APP_ERRORS__.push('PromiseRejection: '+reason); }catch(e){}
+        });
+
+        function showOverlay(){
+          if(document.getElementById('root') && document.getElementById('root').children.length===0){
+            if(document.getElementById('app-error-overlay')) return;
+            var w = document.createElement('div'); w.id = 'app-error-overlay';
+            Object.assign(w.style, {position:'fixed',inset:0,display:'flex',alignItems:'center',justifyContent:'center',background:'#ffffff',zIndex:999999,fontFamily:'Inter, system-ui, Arial, sans-serif'});
+            w.innerHTML = '<div style="max-width:820px;width:88%;text-align:left;padding:22px;border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.12);border:1px solid #e6e6e9"><h2 style="margin:0 0 8px;font-size:18px">Application failed to load</h2><p style="margin:0 0 12px;color:#444">The site JavaScript did not initialize. If you are the site owner, open the browser console (F12) to see errors. You can also click Reload to try again.</p><div style="display:flex;gap:8px;margin-bottom:12px"><button id="reload-app" style="padding:8px 12px;border-radius:8px;border:1px solid #ddd;background:#f7fafc">Reload</button><button id="copy-errors" style="padding:8px 12px;border-radius:8px;border:1px solid #ddd;background:#fff">Copy errors</button></div><pre id="app-error-pre" style="white-space:pre-wrap;max-height:260px;overflow:auto;padding:12px;background:#fbfbfb;border-radius:8px;border:1px solid #f0f0f0;color:#111;font-size:13px"></pre></div>';
+            document.body.appendChild(w);
+            var pre = document.getElementById('app-error-pre');
+            pre.textContent = (window.__APP_ERRORS__ && window.__APP_ERRORS__.length) ? window.__APP_ERRORS__.join('\n') : 'No runtime errors captured yet.';
+            document.getElementById('reload-app').addEventListener('click', function(){ location.reload(); });
+            document.getElementById('copy-errors').addEventListener('click', function(){ try{ navigator.clipboard.writeText(pre.textContent || ''); alert('Errors copied to clipboard'); }catch(e){ alert('Copy failed — open devtools to inspect.'); } });
+          }
+        }
+
+        // show overlay after short delay if app not mounted
+        setTimeout(showOverlay, 1800);
+        // also check later in case of slow load
+        setTimeout(showOverlay, 4000);
+      }catch(e){}
+    })();
+  </script>
   <script type="module" src="./index.tsx"></script>
 <script type="module" src="/index.tsx"></script>
   <!-- Third-party ad tag removed; only Adstera/highperformanceformat remains -->
