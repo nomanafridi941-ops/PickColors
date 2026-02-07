@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
+import ToolsAdRow from '../../components/Ads/ToolsAdRow';
 
 const SAMPLES = [
   { name: 'Nature', url: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=400&auto=format&fit=crop' },
@@ -153,6 +154,7 @@ const ImageExtractor: React.FC<{ useUrl?: boolean }> = ({ useUrl }) => {
         )}
       </div>
 
+      <ToolsAdRow />
       {/* SEO-optimized H1 and intro */}
       <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4">
         Pick Color from Image Online
