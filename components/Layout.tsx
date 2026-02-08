@@ -3,6 +3,11 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { TOOLS } from '../constants';
 import { ToolCategory } from '../types';
+import HeaderLeader from './Ads/HeaderLeader';
+import RightRail from './Ads/RightRail';
+import SocialBar from './Ads/SocialBar';
+import MobileSticky from './Ads/MobileSticky';
+import FooterAd from './Ads/FooterAd';
 
 
 const categories: ToolCategory[] = ['Design Tools', 'Converters', 'Accessibility', 'Image Tools', 'Discovery'];
@@ -115,13 +120,23 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         </div>
       </header>
 
+      {/* Header leaderboard (728x90) - desktop */}
+      <HeaderLeader />
+
       <main className="flex-grow">
         {children}
       </main>
 
-      {/* 728x90 Banner Ad - Above Footer */}
+      {/* Right rail 300x250 on desktop tool pages */}
+      <RightRail />
+
+      {/* Floating social bar and mobile sticky ad */}
+      <SocialBar />
+      <MobileSticky />
+
+      {/* Footer ad (lazy) */}
       <div id="footer-ad-container" className="flex justify-center py-6 bg-slate-50 dark:bg-slate-900">
-        <div id="footer-ad-slot" style={{ width: 728, height: 90, minWidth: 728, minHeight: 90 }}></div>
+        <FooterAd />
       </div>
 
       <footer className="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800/50 py-24">
