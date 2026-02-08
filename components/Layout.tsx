@@ -4,7 +4,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { TOOLS } from '../constants';
 import { ToolCategory } from '../types';
 import HeaderLeader from './Ads/HeaderLeader';
-import RightRail from './Ads/RightRail';
 import SocialBar from './Ads/SocialBar';
 import MobileSticky from './Ads/MobileSticky';
 import FooterAd from './Ads/FooterAd';
@@ -126,9 +125,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <main className="flex-grow">
         {children}
       </main>
-
-      {/* Right rail 300x250 on desktop tool pages */}
-      <RightRail />
 
       {/* Floating social bar and mobile sticky ad */}
       <SocialBar />
