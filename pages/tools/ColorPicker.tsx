@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { hexToRgb, rgbToHex, rgbToHsl, hslToRgb } from '../../utils/colorUtils';
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
-import ToolsAdRow from '../../components/Ads/ToolsAdRow.tsx';
+import ToolsAdRow from '../../components/Ads/ToolsAdRow';
 
 // Added interface to support initialMode prop from routes
 interface ColorPickerProps {

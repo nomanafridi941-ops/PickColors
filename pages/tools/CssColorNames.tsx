@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { hexToRgb } from '../../utils/colorUtils';
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
-import ToolsAdRow from '../../components/Ads/ToolsAdRow.tsx';
+import ToolsAdRow from '../../components/Ads/ToolsAdRow';
 
 const CSS_COLORS = [
   { name: 'AliceBlue', hex: '#F0F8FF' }, { name: 'AntiqueWhite', hex: '#FAEBD7' }, { name: 'Aqua', hex: '#00FFFF' },

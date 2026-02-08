@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
-import ToolsAdRow from '../../components/Ads/ToolsAdRow.tsx';
+import ToolsAdRow from '../../components/Ads/ToolsAdRow';
 
 interface ColorStop {
   id: string;

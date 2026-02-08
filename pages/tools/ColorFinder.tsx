@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { getShadesAndTints } from '../../utils/colorUtils';
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
-import ToolsAdRow from '../../components/Ads/ToolsAdRow.tsx';
+import ToolsAdRow from '../../components/Ads/ToolsAdRow';
 
 const ColorFinder: React.FC = () => {
   const [hex, setHex] = useState('#6366F1');
