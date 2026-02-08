@@ -29,12 +29,26 @@ const AdInvoke: React.FC<AdInvokeProps> = ({ adKey, width, height, id }) => {
 
   useEffect(() => {
     if (!inView || !containerRef.current) return;
-    const slotId = id || `ad-invoke-${adKey}-${width}x${height}`;
+    // determine effective ad size based on current viewport
+    const viewport = window.innerWidth || 1024;
+    let effWidth = width;
+    let effHeight = height;
+    if (viewport < 640) {
+      // mobile: prefer 320x50 when possible
+      effWidth = Math.min(width, 320);
+      effHeight = effWidth === 320 ? 50 : height;
+    } else if (viewport < 1024) {
+      // tablet: prefer 468x60
+      effWidth = Math.min(width, 468);
+      effHeight = effWidth === 468 ? 60 : height;
+    }
+
+    const slotId = id || `ad-invoke-${adKey}-${effWidth}x${effHeight}`;
     if (!window.__ad_injected_ids) window.__ad_injected_ids = {};
     if (window.__ad_injected_ids[slotId]) return;
 
-    // Build atOptions inline script
-    const opts = `atOptions = {\n  'key' : '${adKey}',\n  'format' : 'iframe',\n  'height' : ${height},\n  'width' : ${width},\n  'params' : {}\n};`;
+    // Build atOptions inline script with effective size
+    const opts = `atOptions = {\n  'key' : '${adKey}',\n  'format' : 'iframe',\n  'height' : ${effHeight},\n  'width' : ${effWidth},\n  'params' : {}\n};`;
 
     const inline = document.createElement('script');
     inline.type = 'text/javascript';
@@ -44,6 +58,12 @@ const AdInvoke: React.FC<AdInvokeProps> = ({ adKey, width, height, id }) => {
     loader.type = 'text/javascript';
     loader.src = `https://www.highperformanceformat.com/${adKey}/invoke.js`;
     loader.async = true;
+
+    // Make container responsive: full width up to the effective ad width
+    containerRef.current.style.width = '100%';
+    containerRef.current.style.maxWidth = effWidth + 'px';
+    containerRef.current.style.height = effHeight + 'px';
+    containerRef.current.style.minHeight = effHeight + 'px';
 
     // Append scripts into the container so provider can write into nearby DOM
     containerRef.current.appendChild(inline);
@@ -65,7 +85,7 @@ const AdInvoke: React.FC<AdInvokeProps> = ({ adKey, width, height, id }) => {
   }, [inView, adKey, width, height, id]);
 
   return (
-    <div id={id} ref={containerRef} style={{ width, height, minWidth: width, minHeight: height, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }} />
+    <div id={id} ref={containerRef} style={{ width: '100%', maxWidth: width, height, minHeight: height, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }} />
   );
 };
 
