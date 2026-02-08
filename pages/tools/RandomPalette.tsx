@@ -34,15 +34,27 @@ const RandomPalette: React.FC = () => {
         title="Random Color Palette Generator"
         description="Generate fresh color palettes with a single click. Random color combinations for design inspiration."
         url="/tools/palette"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [
-            {"@type": "Question","name": "How many colors are generated?","acceptedAnswer": {"@type": "Answer","text": "By default five colors are generated; you can reshuffle to get new combinations."}},
-            {"@type": "Question","name": "Can I lock colors?","acceptedAnswer": {"@type": "Answer","text": "Yes — lock a color to keep it while reshuffling others."}},
-            {"@type": "Question","name": "Is this free to use?","acceptedAnswer": {"@type": "Answer","text": "Yes — free and no sign-in required."}}
-          ]
-        }}
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Palette Generator — PickColors",
+            "url": "https://pickcolors.xyz/tools/palette",
+            "applicationCategory": "DesignTool",
+            "operatingSystem": "Web",
+            "description": "Generate and lock color palettes for design inspiration.",
+            "image": "https://pickcolors.xyz/og-image.png"
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {"@type": "Question","name": "How many colors are generated?","acceptedAnswer": {"@type": "Answer","text": "By default five colors are generated; you can reshuffle to get new combinations."}},
+              {"@type": "Question","name": "Can I lock colors?","acceptedAnswer": {"@type": "Answer","text": "Yes — lock a color to keep it while reshuffling others."}},
+              {"@type": "Question","name": "Is this free to use?","acceptedAnswer": {"@type": "Answer","text": "Yes — free and no sign-in required."}}
+            ]
+          }
+        ]}
       />
       <div className="h-[calc(100vh-80px)] w-full flex flex-col">
       <Breadcrumbs />

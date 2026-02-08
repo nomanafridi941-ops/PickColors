@@ -7,9 +7,10 @@ interface SEOHeadProps {
   url?: string;
   image?: string;
   jsonLd?: object | object[];
+  alternates?: { href: string; hreflang: string }[];
 }
 
-const SEOHead: React.FC<SEOHeadProps> = ({ title, description, url, image, jsonLd }) => {
+const SEOHead: React.FC<SEOHeadProps> = ({ title, description, url, image, jsonLd, alternates }) => {
   const siteUrl = 'https://pickcolors.xyz';
   const fullUrl = url ? `${siteUrl}${url}` : siteUrl;
   const ogImage = image || `${siteUrl}/og-image.png`;
@@ -26,6 +27,9 @@ const SEOHead: React.FC<SEOHeadProps> = ({ title, description, url, image, jsonL
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
       <link rel="canonical" href={fullUrl} />
+      {alternates && alternates.map((a, i) => (
+        <link key={i} rel="alternate" hrefLang={a.hreflang} href={a.href} />
+      ))}
       {jsonLd && (
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       )}

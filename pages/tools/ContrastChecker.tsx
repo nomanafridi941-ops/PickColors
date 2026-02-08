@@ -28,15 +28,27 @@ const ContrastChecker: React.FC<ContrastCheckerProps> = ({ fullAudit }) => {
         title="Contrast Checker"
         description="Test color accessibility based on WCAG guidelines. Check color contrast ratios for web accessibility compliance."
         url="/tools/contrast"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [
-            {"@type": "Question","name": "What contrast ratio is required for WCAG AA?","acceptedAnswer": {"@type": "Answer","text": "WCAG AA requires a contrast ratio of at least 4.5:1 for normal text and 3:1 for large text."}},
-            {"@type": "Question","name": "Can I test transparency?","acceptedAnswer": {"@type": "Answer","text": "This tool currently supports solid colors; for images or transparency use the Image Color Extractor or manual checks."}},
-            {"@type": "Question","name": "Is this tool free?","acceptedAnswer": {"@type": "Answer","text": "Yes — free to use with no account needed."}}
-          ]
-        }}
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Contrast Checker — PickColors",
+            "url": "https://pickcolors.xyz/tools/contrast",
+            "applicationCategory": "DesignTool",
+            "operatingSystem": "Web",
+            "description": "Check WCAG contrast ratios and get PASS/FAIL guidance.",
+            "image": "https://pickcolors.xyz/og-image.png"
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {"@type": "Question","name": "What contrast ratio is required for WCAG AA?","acceptedAnswer": {"@type": "Answer","text": "WCAG AA requires a contrast ratio of at least 4.5:1 for normal text and 3:1 for large text."}},
+              {"@type": "Question","name": "Can I test transparency?","acceptedAnswer": {"@type": "Answer","text": "This tool currently supports solid colors; for images or transparency use the Image Color Extractor or manual checks."}},
+              {"@type": "Question","name": "Is this tool free?","acceptedAnswer": {"@type": "Answer","text": "Yes — free to use with no account needed."}}
+            ]
+          }
+        ]}
       />
       <div className="max-w-5xl mx-auto py-16 px-4">
       <Breadcrumbs />

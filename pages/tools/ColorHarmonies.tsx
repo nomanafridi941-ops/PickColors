@@ -41,15 +41,27 @@ const ColorHarmonies: React.FC = () => {
         title="Color Harmonies"
         description="Discover perfect color combinations using color theory. Generate harmonies like complementary, analogous, and triadic palettes."
         url="/tools/harmonies"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [
-            {"@type": "Question","name": "What are color harmonies?","acceptedAnswer": {"@type": "Answer","text": "Color harmonies are combinations derived from the color wheel that work well together, such as complementary, analogous, and triadic schemes."}},
-            {"@type": "Question","name": "Can I use these palettes in my designs?","acceptedAnswer": {"@type": "Answer","text": "Yes — copy any generated color code and paste into your CSS or design tool."}},
-            {"@type": "Question","name": "Is this tool free?","acceptedAnswer": {"@type": "Answer","text": "Yes — it’s free to use with no account required."}}
-          ]
-        }}
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Color Harmonies — PickColors",
+            "url": "https://pickcolors.xyz/tools/harmonies",
+            "applicationCategory": "DesignTool",
+            "operatingSystem": "Web",
+            "description": "Generate harmonious color palettes from a base color.",
+            "image": "https://pickcolors.xyz/og-image.png"
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {"@type": "Question","name": "What are color harmonies?","acceptedAnswer": {"@type": "Answer","text": "Color harmonies are combinations derived from the color wheel that work well together, such as complementary, analogous, and triadic schemes."}},
+              {"@type": "Question","name": "Can I use these palettes in my designs?","acceptedAnswer": {"@type": "Answer","text": "Yes — copy any generated color code and paste into your CSS or design tool."}},
+              {"@type": "Question","name": "Is this tool free?","acceptedAnswer": {"@type": "Answer","text": "Yes — it’s free to use with no account required."}}
+            ]
+          }
+        ]}
       />
       <div className="max-w-6xl mx-auto py-16 px-4">
       <Breadcrumbs />

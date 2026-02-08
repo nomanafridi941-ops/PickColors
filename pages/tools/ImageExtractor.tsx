@@ -88,15 +88,27 @@ const ImageExtractor: React.FC<{ useUrl?: boolean }> = ({ useUrl }) => {
         title="Image Color Extractor"
         description="Upload images to extract dominant color palettes. AI-powered color extraction from photos for design inspiration."
         url="/tools/extractor"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [
-            {"@type": "Question","name": "Can I extract colors from any image?","acceptedAnswer": {"@type": "Answer","text": "Yes, upload or link to most public images; if CORS blocks direct access we offer a proxy fallback."}},
-            {"@type": "Question","name": "How many colors are extracted?","acceptedAnswer": {"@type": "Answer","text": "Up to 10 prominent colors are detected per image."}},
-            {"@type": "Question","name": "Is the tool free?","acceptedAnswer": {"@type": "Answer","text": "Yes — it's free and does not require login."}}
-          ]
-        }}
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Image Color Extractor — PickColors",
+            "url": "https://pickcolors.xyz/tools/extractor",
+            "applicationCategory": "DesignTool",
+            "operatingSystem": "Web",
+            "description": "Extract dominant colors from images and photos.",
+            "image": "https://pickcolors.xyz/og-image.png"
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {"@type": "Question","name": "Can I extract colors from any image?","acceptedAnswer": {"@type": "Answer","text": "Yes, upload or link to most public images; if CORS blocks direct access we offer a proxy fallback."}},
+              {"@type": "Question","name": "How many colors are extracted?","acceptedAnswer": {"@type": "Answer","text": "Up to 10 prominent colors are detected per image."}},
+              {"@type": "Question","name": "Is the tool free?","acceptedAnswer": {"@type": "Answer","text": "Yes — it's free and does not require login."}}
+            ]
+          }
+        ]}
       />
       <div className="max-w-7xl mx-auto py-16 px-4">
       <Breadcrumbs />

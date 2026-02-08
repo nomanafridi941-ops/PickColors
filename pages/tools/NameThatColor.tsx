@@ -34,15 +34,27 @@ const NameThatColor: React.FC = () => {
         title="Name That Color"
         description="Identify names for specific color codes. Find the perfect name for any hex color."
         url="/tools/namer"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [
-            {"@type": "Question","name": "How does Name That Color work?","acceptedAnswer": {"@type": "Answer","text": "It compares your hex color against a standard list and returns the closest named color by RGB distance."}},
-            {"@type": "Question","name": "Can I use the names in CSS?","acceptedAnswer": {"@type": "Answer","text": "If the name corresponds to a valid CSS color name, you can use it directly in stylesheets."}},
-            {"@type": "Question","name": "Is this tool free?","acceptedAnswer": {"@type": "Answer","text": "Yes — free with no login required."}}
-          ]
-        }}
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Name That Color — PickColors",
+            "url": "https://pickcolors.xyz/tools/namer",
+            "applicationCategory": "DesignTool",
+            "operatingSystem": "Web",
+            "description": "Find closest named color for any hex code.",
+            "image": "https://pickcolors.xyz/og-image.png"
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {"@type": "Question","name": "How does Name That Color work?","acceptedAnswer": {"@type": "Answer","text": "It compares your hex color against a standard list and returns the closest named color by RGB distance."}},
+              {"@type": "Question","name": "Can I use the names in CSS?","acceptedAnswer": {"@type": "Answer","text": "If the name corresponds to a valid CSS color name, you can use it directly in stylesheets."}},
+              {"@type": "Question","name": "Is this tool free?","acceptedAnswer": {"@type": "Answer","text": "Yes — free with no login required."}}
+            ]
+          }
+        ]}
       />
       <div className="max-w-4xl mx-auto py-20 px-4 text-center">
       <Breadcrumbs />

@@ -14,15 +14,27 @@ const ReadabilityTester: React.FC = () => {
         title="Readability Tester"
         description="Preview text readability across different sizes and backgrounds. Test color combinations for readability."
         url="/tools/readability"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [
-            {"@type": "Question","name": "What does the Readability Tester check?","acceptedAnswer": {"@type": "Answer","text": "It previews text across sizes, weights, and color combinations to help evaluate legibility."}},
-            {"@type": "Question","name": "Can I adjust font size?","acceptedAnswer": {"@type": "Answer","text": "Yes — use the slider to preview different font sizes from 12px to 72px."}},
-            {"@type": "Question","name": "Is this tool free?","acceptedAnswer": {"@type": "Answer","text": "Yes — free to use with no sign-in required."}}
-          ]
-        }}
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Readability Tester — PickColors",
+            "url": "https://pickcolors.xyz/tools/readability",
+            "applicationCategory": "DesignTool",
+            "operatingSystem": "Web",
+            "description": "Preview text readability across sizes and backgrounds.",
+            "image": "https://pickcolors.xyz/og-image.png"
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {"@type": "Question","name": "What does the Readability Tester check?","acceptedAnswer": {"@type": "Answer","text": "It previews text across sizes, weights, and color combinations to help evaluate legibility."}},
+              {"@type": "Question","name": "Can I adjust font size?","acceptedAnswer": {"@type": "Answer","text": "Yes — use the slider to preview different font sizes from 12px to 72px."}},
+              {"@type": "Question","name": "Is this tool free?","acceptedAnswer": {"@type": "Answer","text": "Yes — free to use with no sign-in required."}}
+            ]
+          }
+        ]}
       />
       <div className="max-w-5xl mx-auto py-16 px-4">
       <Breadcrumbs />

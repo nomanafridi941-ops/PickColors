@@ -52,15 +52,27 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ initialMode }) => {
         title="Color Picker & Converter"
         description="Pick colors visually and convert between HEX, RGB, and HSL. Accurate color conversion tool for designers and developers."
         url="/tools/picker"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [
-            {"@type": "Question","name": "What formats does the Color Picker support?","acceptedAnswer": {"@type": "Answer","text": "HEX, RGB, and HSL are supported and convertible with one click."}},
-            {"@type": "Question","name": "Can I copy CSS-ready values?","acceptedAnswer": {"@type": "Answer","text": "Yes — copy buttons produce CSS-friendly values ready for paste into stylesheets."}},
-            {"@type": "Question","name": "Is this tool free?","acceptedAnswer": {"@type": "Answer","text": "Yes — PickColors tools are free to use without sign-in."}}
-          ]
-        }}
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Color Picker — PickColors",
+            "url": "https://pickcolors.xyz/tools/picker",
+            "applicationCategory": "DesignTool",
+            "operatingSystem": "Web",
+            "description": "Interactive color picker and converter. Copy HEX, RGB, HSL values.",
+            "image": "https://pickcolors.xyz/og-image.png"
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {"@type": "Question","name": "What formats does the Color Picker support?","acceptedAnswer": {"@type": "Answer","text": "HEX, RGB, and HSL are supported and convertible with one click."}},
+              {"@type": "Question","name": "Can I copy CSS-ready values?","acceptedAnswer": {"@type": "Answer","text": "Yes — copy buttons produce CSS-friendly values ready for paste into stylesheets."}},
+              {"@type": "Question","name": "Is this tool free?","acceptedAnswer": {"@type": "Answer","text": "Yes — PickColors tools are free to use without sign-in."}}
+            ]
+          }
+        ]}
       />
       <div className="max-w-6xl mx-auto py-16 px-4">
       <Breadcrumbs />

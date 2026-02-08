@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { TOOLS } from '../constants';
 
 import SEOHead from '../components/SEOHead';
+import MiniColorPicker from '../components/MiniColorPicker';
 
 const Home: React.FC = () => {
   return (
@@ -44,6 +45,32 @@ const Home: React.FC = () => {
           </div>
 
           {/* Header leaderboard handled globally in layout (avoid duplicate) */}
+        </div>
+      </section>
+
+      {/* Mini interactive demo + Popular Tools */}
+      <section className="py-12 px-4 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 items-start">
+          <div className="md:col-span-1">
+            <h2 className="text-2xl font-extrabold mb-4">Try a mini color picker</h2>
+            <p className="text-slate-600 dark:text-slate-300 mb-6">Interact with a lightweight color picker right here to preview copy behavior and color values.</p>
+            <MiniColorPicker />
+          </div>
+
+          <div className="md:col-span-2">
+            <h3 className="text-xl font-bold mb-4">Popular Tools</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {TOOLS.slice(0,6).map(t => (
+                <Link key={t.id} to={t.path} className="p-4 bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800 flex items-center gap-4 hover:shadow-md transition-all">
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-slate-50 dark:bg-slate-800">{t.icon}</div>
+                  <div>
+                    <div className="font-bold text-slate-900 dark:text-white">{t.name}</div>
+                    <div className="text-sm text-slate-500 dark:text-slate-400">{t.description}</div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
