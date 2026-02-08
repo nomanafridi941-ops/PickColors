@@ -124,28 +124,6 @@
 <script type="module" src="/index.tsx"></script>
   <!-- Third-party ad tag removed; only Adstera/highperformanceformat remains -->
 
-  <!-- Footer Ad Script - loads after React renders -->
-  <script>
-    function loadFooterAd() {
-      var slot = document.getElementById('footer-ad-slot');
-      if (slot && !slot.hasChildNodes()) {
-        var w = (typeof window !== 'undefined' && window.innerWidth) ? Math.min(window.innerWidth, 728) : 728;
-        window.atOptions = {
-          'key': 'f4583a41ba86b5c6c7515106fb78a5bb',
-          'format': 'iframe',
-          'height': (w <= 320 ? 50 : 90),
-          'width': w,
-          'params': {}
-        };
-        var s = document.createElement('script');
-        s.type = 'text/javascript';
-        s.src = '//www.highperformanceformat.com/f4583a41ba86b5c6c7515106fb78a5bb/invoke.js';
-        slot.appendChild(s);
-      } else {
-        setTimeout(loadFooterAd, 500);
-      }
-    }
-    setTimeout(loadFooterAd, 1000);
-  </script>
+  <!-- Footer ad loader removed from static HTML to avoid crawler/console load errors; ads are injected client-side by React components. -->
 </body>
 </html>
