@@ -17,9 +17,9 @@ const Contact: React.FC = () => {
         Have feedback, found a bug, or want to suggest a new color tool? Reach out to the PickColors team—we’re here to help and always open to ideas from the creative community.
       </p>
       
-      <div className="inline-block p-12 bg-indigo-50 dark:bg-slate-800 rounded-3xl border border-indigo-100 dark:border-slate-700">
+      <div className="w-full sm:inline-block p-6 sm:p-12 bg-indigo-50 dark:bg-slate-800 rounded-3xl border border-indigo-100 dark:border-slate-700">
         <p className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-2">Email Us At</p>
-        <a href="mailto:support@pickcolors.xyz" className="text-3xl font-bold text-gray-900 dark:text-white hover:text-indigo-600 transition underline">
+        <a href="mailto:support@pickcolors.xyz" className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white hover:text-indigo-600 transition underline break-words whitespace-normal">
           support@pickcolors.xyz
         </a>
       </div>
