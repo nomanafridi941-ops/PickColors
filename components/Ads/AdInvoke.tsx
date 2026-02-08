@@ -29,13 +29,6 @@ const AdInvoke: React.FC<AdInvokeProps> = ({ adKey, width, height, id }) => {
 
   useEffect(() => {
     if (!inView || !containerRef.current) return;
-    // Avoid loading external ad scripts during crawler/live-tests
-    try {
-      var _ua = (navigator && navigator.userAgent) ? navigator.userAgent : '';
-      if (window && (window.__disable_ads || window.__skip_external_resources || /Googlebot|GoogleHC|HeadlessChrome|Google-Inspection|Google/i.test(_ua))) {
-        return;
-      }
-    } catch (e) {}
     // determine effective ad size based on current viewport
     const viewport = window.innerWidth || 1024;
     let effWidth = width;
