@@ -59,9 +59,8 @@ const AdInvoke: React.FC<AdInvokeProps> = ({ adKey, width, height, id }) => {
     loader.src = `https://www.highperformanceformat.com/${adKey}/invoke.js`;
     loader.async = true;
 
-    // Make container responsive: full width up to the effective ad width
-    containerRef.current.style.width = '100%';
-    containerRef.current.style.maxWidth = effWidth + 'px';
+    // Set container to the exact effective ad pixel size to avoid provider scaling
+    containerRef.current.style.width = effWidth + 'px';
     containerRef.current.style.height = effHeight + 'px';
     containerRef.current.style.minHeight = effHeight + 'px';
 
@@ -85,7 +84,7 @@ const AdInvoke: React.FC<AdInvokeProps> = ({ adKey, width, height, id }) => {
   }, [inView, adKey, width, height, id]);
 
   return (
-    <div id={id} ref={containerRef} style={{ width: '100%', maxWidth: width, height, minHeight: height, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }} />
+    <div id={id} ref={containerRef} style={{ width: width, height, minHeight: height, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }} />
   );
 };
 
