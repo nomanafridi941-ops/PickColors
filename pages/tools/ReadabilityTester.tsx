@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import ToolsAdRow from '../../components/Ads/ToolsAdRow';
+import RelatedTools from '../../components/RelatedTools';
+import FAQList from '../../components/FAQList';
+import { TOOLS } from '../../constants';
 
 const ReadabilityTester: React.FC = () => {
   const [bg, setBg] = useState('#FFFFFF');
@@ -79,47 +82,13 @@ const ReadabilityTester: React.FC = () => {
       {/* Helper text for copy functionality */}
       <p className="text-xs text-slate-400 mt-2 mb-6">Test readability and copy your color codes with one click.</p>
 
-      {/* SEO Content Section */}
-      <section className="prose prose-indigo dark:prose-invert max-w-3xl mx-auto my-12">
-        <h2>What is a Readability Tester?</h2>
-        <p>The Readability Tester lets you preview how text looks with different color and size combinations. It’s perfect for designers, developers, and content creators who want to make sure their websites and apps are easy to read for all users.</p>
-        <h2>Who Should Use This Tool?</h2>
-        <ul>
-          <li><strong>Designers</strong>—for testing typography and color contrast</li>
-          <li><strong>Developers</strong>—for UI and accessibility checks</li>
-          <li><strong>Content creators</strong>—for blog and article readability</li>
-          <li><strong>Marketers</strong>—for campaign and ad copy clarity</li>
-        </ul>
-        <h2>How to Use the Readability Tester</h2>
-        <ol>
-          <li>Pick background and text colors using the color pickers.</li>
-          <li>Adjust the font size slider to preview different sizes.</li>
-          <li>Read the sample text and check for clarity and comfort.</li>
-        </ol>
-        <h2>Common Mistakes to Avoid</h2>
-        <ul>
-          <li>Using low-contrast color combinations</li>
-          <li>Choosing font sizes that are too small for mobile</li>
-          <li>Not testing in both light and dark modes</li>
-        </ul>
-        <h2>FAQs</h2>
-        <ul>
-          <li><strong>Q:</strong> What is a good font size for body text?<br/><strong>A:</strong> 16–18px is recommended for most content.</li>
-          <li><strong>Q:</strong> Does this tool check contrast ratios?<br/><strong>A:</strong> No, use our <a href="/tools/contrast">Contrast Checker</a> for that.</li>
-          <li><strong>Q:</strong> Is this tool free?<br/><strong>A:</strong> 100% free, no login required.</li>
-          <li><strong>Q:</strong> Can I use custom fonts?<br/><strong>A:</strong> This tool previews with the site’s default font.</li>
-        </ul>
-      </section>
-      {/* Related Color Tools Section */}
-      <section className="max-w-3xl mx-auto my-16">
-        <h2 className="text-2xl font-bold mb-4">Related Color Tools</h2>
-        <ul className="grid md:grid-cols-2 gap-4">
-          <li><a href="/tools/contrast" className="text-indigo-600 hover:underline">Check color contrast for accessibility</a></li>
-          <li><a href="/tools/picker" className="text-indigo-600 hover:underline">Pick and convert colors with our Color Picker</a></li>
-          <li><a href="/tools/palette" className="text-indigo-600 hover:underline">Generate custom color palettes</a></li>
-          <li><a href="/tools/harmonies" className="text-indigo-600 hover:underline">Create harmonious color schemes</a></li>
-        </ul>
-      </section>
+      <FAQList faqs={[
+        { q: 'What is a good font size for body text?', a: '16–18px is recommended for most content.' },
+        { q: 'Does this tool check contrast ratios?', a: 'No, use our Contrast Checker for that.' },
+        { q: 'Is this tool free?', a: '100% free, no login required.' }
+      ]} />
+
+      <RelatedTools items={TOOLS.filter(t => ['readability','contrast','picker','palette'].includes(t.id))} />
     </div>
     </>
   );

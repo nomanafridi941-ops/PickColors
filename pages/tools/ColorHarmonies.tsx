@@ -3,6 +3,9 @@ import { getHarmonies } from '../../utils/colorUtils';
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import ToolsAdRow from '../../components/Ads/ToolsAdRow';
+import RelatedTools from '../../components/RelatedTools';
+import FAQList from '../../components/FAQList';
+import { TOOLS } from '../../constants';
 
 const ColorHarmonies: React.FC = () => {
   const [baseColor, setBaseColor] = useState('#6366F1');
@@ -114,16 +117,13 @@ const ColorHarmonies: React.FC = () => {
           <li><strong>Q:</strong> Can I export palettes?<br/><strong>A:</strong> Copy any color code, or use our <a href="/tools/palette">Palette Generator</a> for advanced export options.</li>
         </ul>
       </section>
-      {/* Related Color Tools Section */}
-      <section className="max-w-3xl mx-auto my-16">
-        <h2 className="text-2xl font-bold mb-4">Related Color Tools</h2>
-        <ul className="grid md:grid-cols-2 gap-4">
-          <li><a href="/tools/picker" className="text-indigo-600 hover:underline">Pick and convert colors with our Color Picker</a></li>
-          <li><a href="/tools/palette" className="text-indigo-600 hover:underline">Generate custom color palettes</a></li>
-          <li><a href="/tools/contrast" className="text-indigo-600 hover:underline">Check color contrast for accessibility</a></li>
-          <li><a href="/tools/hsl-converter" className="text-indigo-600 hover:underline">Convert colors to HSL format</a></li>
-        </ul>
-      </section>
+      <FAQList faqs={[
+        { q: 'What are color harmonies?', a: 'Harmonies are color combinations based on the color wheel such as complementary, analogous, and triadic.' },
+        { q: 'Can I use these palettes in CSS?', a: 'Yes — copy any generated color code and paste into your stylesheets or design tools.' },
+        { q: 'Is this tool free?', a: 'Yes — free to use with no account required.' }
+      ]} />
+
+      <RelatedTools items={TOOLS.filter(t => ['picker','palette','contrast','harmony'].indexOf(t.id) === -1 ? t : t).slice(0,4)} />
     </div>
     </>
   );

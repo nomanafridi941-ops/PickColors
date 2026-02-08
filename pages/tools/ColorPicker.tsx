@@ -3,6 +3,9 @@ import { hexToRgb, rgbToHex, rgbToHsl, hslToRgb } from '../../utils/colorUtils';
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import ToolsAdRow from '../../components/Ads/ToolsAdRow';
+import RelatedTools from '../../components/RelatedTools';
+import FAQList from '../../components/FAQList';
+import { TOOLS } from '../../constants';
 
 // Added interface to support initialMode prop from routes
 interface ColorPickerProps {
@@ -194,6 +197,14 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ initialMode }) => {
         
 
       </div>
+
+      <FAQList faqs={[
+        { q: 'What formats does this support?', a: 'HEX, RGB, and HSL are supported and convertible with one click.' },
+        { q: 'Can I copy CSS-ready values?', a: 'Yes — use the Copy buttons to generate CSS-friendly values.' },
+        { q: 'Is this tool free?', a: 'Yes — PickColors tools are free to use without sign-in.' }
+      ]} />
+
+      <RelatedTools items={TOOLS.slice(0,4)} />
       </div>
     </>
   );

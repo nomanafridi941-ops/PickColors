@@ -3,6 +3,9 @@ import { generateRandomHex } from '../../utils/colorUtils';
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import ToolsAdRow from '../../components/Ads/ToolsAdRow';
+import RelatedTools from '../../components/RelatedTools';
+import FAQList from '../../components/FAQList';
+import { TOOLS } from '../../constants';
 
 const RandomPalette: React.FC = () => {
   const [colors, setColors] = useState<{hex: string, locked: boolean}[]>(() => 
@@ -101,6 +104,13 @@ const RandomPalette: React.FC = () => {
           Shuffle Palette
         </button>
       </div>
+      <FAQList faqs={[
+        { q: 'How many colors are generated?', a: 'By default five colors are generated; you can reshuffle to get new combinations.' },
+        { q: 'Can I lock colors?', a: 'Yes — lock a color to keep it while reshuffling others.' },
+        { q: 'Is this free to use?', a: 'Yes — free and no sign-in required.' }
+      ]} />
+
+      <RelatedTools items={TOOLS.filter(t => ['palette','harmonies','contrast','picker'].includes(t.id))} />
     </>
   );
 };
