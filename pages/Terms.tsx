@@ -24,7 +24,7 @@ const Terms: React.FC = () => {
           <h2>Changes to Terms</h2>
           <p>We may update these terms at any time. Continued use of PickColors means you accept the latest version.</p>
           <h2>Contact</h2>
-          <p>Questions? Email <a href="mailto:support@pickcolors.xyz">support@pickcolors.xyz</a>.</p>
+          <p>Questions? Email <a href="mailto:pickcolors86@gmail.com">pickcolors86@gmail.com</a>.</p>
         </div>
       </div>
     </>

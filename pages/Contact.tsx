@@ -19,8 +19,8 @@ const Contact: React.FC = () => {
       
       <div className="w-full sm:inline-block p-6 sm:p-12 bg-indigo-50 dark:bg-slate-800 rounded-3xl border border-indigo-100 dark:border-slate-700">
         <p className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-2">Email Us At</p>
-        <a href="mailto:support@pickcolors.xyz" className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white hover:text-indigo-600 transition underline break-words whitespace-normal">
-          support@pickcolors.xyz
+        <a href="mailto:pickcolors86@gmail.com" className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white hover:text-indigo-600 transition underline break-words whitespace-normal">
+          pickcolors86@gmail.com
         </a>
       </div>
       <div className="mt-16 text-gray-500 dark:text-gray-400">

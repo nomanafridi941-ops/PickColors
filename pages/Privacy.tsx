@@ -24,7 +24,7 @@ const Privacy: React.FC = () => {
           <h2>Third-Party Services</h2>
           <p>Some tools may use third-party APIs (e.g., Google AI for mood boards). These services are used solely to provide features and are subject to their own privacy policies.</p>
           <h2>Contact</h2>
-          <p>If you have questions about our privacy practices, email <a href="mailto:support@pickcolors.xyz">support@pickcolors.xyz</a>.</p>
+          <p>If you have questions about our privacy practices, email <a href="mailto:pickcolors86@gmail.com">pickcolors86@gmail.com</a>.</p>
         </div>
       </div>
     </>
