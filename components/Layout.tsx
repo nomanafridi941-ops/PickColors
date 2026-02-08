@@ -143,7 +143,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               <div className="grid grid-cols-2 gap-2">
                 {categories.map(cat => (
                   <div key={cat} className="px-4">
-                    <h5 className="text-sm font-bold mb-1 text-slate-600 dark:text-slate-300">{cat}</h5>
+                    <h5 className="text-[10px] font-black uppercase tracking-[0.2em] text-indigo-500 mb-2 px-2">{cat}</h5>
                     <ul className="space-y-1">
                       {TOOLS.filter(t => t.category === cat).slice(0,6).map(tool => (
                         <li key={tool.id}>
