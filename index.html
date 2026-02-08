@@ -18,29 +18,7 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#6366f1">
 
-  <script>
-    // Prevent loading heavy external resources (ads/CDNs) for crawlers like Google
-    try {
-      var _ua = (navigator && navigator.userAgent) ? navigator.userAgent : '';
-      if (/Googlebot|GoogleHC|HeadlessChrome|Google-Inspection|Google/i.test(_ua)) {
-        window.__disable_ads = true;
-        window.__skip_external_resources = true;
-      }
-    } catch (e) {}
-  </script>
-  <script>
-    // Conditionally load Tailwind CDN only for real users (not crawler/testing agents)
-    (function(){
-      try {
-        var ua = (navigator && navigator.userAgent) ? navigator.userAgent : '';
-        if (/Googlebot|GoogleHC|HeadlessChrome|Google-Inspection|Google/i.test(ua)) return;
-        var s = document.createElement('script');
-        s.src = 'https://cdn.tailwindcss.com';
-        s.defer = true;
-        document.head.appendChild(s);
-      } catch(e) {}
-    })();
-  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
