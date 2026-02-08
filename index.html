@@ -42,25 +42,19 @@
     })();
   </script>
   <script>
-    // Safely set Tailwind config without throwing when Tailwind CDN isn't loaded
-    (function(){
-      try {
-        window.tailwind = window.tailwind || {};
-        window.tailwind.config = {
-          darkMode: 'class',
-          theme: {
-            extend: {
-              colors: {
-                indigo: {
-                  500: '#6366f1',
-                  600: '#4f46e5',
-                },
-              },
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            indigo: {
+              500: '#6366f1',
+              600: '#4f46e5',
             },
           },
-        };
-      } catch(e){}
-    })();
+        },
+      },
+    }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

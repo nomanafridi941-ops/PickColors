@@ -1,8 +1,6 @@
 /* Minimal global stylesheet to ensure /index.css loads for crawlers
    Add your Tailwind build output or imports here in production. */
-a:root{--bg:#ffffff;--text:#0f172a}
-/* Dark mode overrides when `html.dark` or `.dark` is present (keeps theme working without Tailwind) */
-html.dark, .dark { --bg: #0b1220; --text: #f8fafc; }
+:root{--bg:#ffffff;--text:#0f172a}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
 a,img,svg{max-width:100%;display:inline-block}
 
