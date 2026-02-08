@@ -102,6 +102,19 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           </nav>
 
           <div className="flex items-center gap-3">
+            {/* Mobile menu toggle */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="lg:hidden p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all"
+              aria-expanded={mobileMenuOpen}
+              aria-label="Toggle navigation"
+            >
+              {mobileMenuOpen ? (
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
+              ) : (
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+              )}
+            </button>
             <button 
               onClick={() => setIsDark(!isDark)}
               className="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all"
@@ -118,6 +131,39 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           </div>
         </div>
       </header>
+
+      {/* Mobile dropdown navigation */}
+      <div className={`lg:hidden ${mobileMenuOpen ? 'block' : 'hidden'} border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950`}>
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-4">
+          <nav className="space-y-4">
+            <Link to="/" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-semibold">Home</Link>
+
+            <div>
+              <h4 className="text-xs font-black uppercase tracking-[0.2em] text-indigo-500 mb-2 px-4">Toolkit</h4>
+              <div className="grid grid-cols-2 gap-2">
+                {categories.map(cat => (
+                  <div key={cat} className="px-4">
+                    <h5 className="text-sm font-bold mb-1 text-slate-600 dark:text-slate-300">{cat}</h5>
+                    <ul className="space-y-1">
+                      {TOOLS.filter(t => t.category === cat).slice(0,6).map(tool => (
+                        <li key={tool.id}>
+                          <Link to={tool.path} onClick={() => setMobileMenuOpen(false)} className="text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-indigo-600 block py-1">{tool.name}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+              <div className="px-4 mt-3">
+                <Link to="/sitemap" onClick={() => setMobileMenuOpen(false)} className="text-indigo-600 font-black">Browse all tools →</Link>
+              </div>
+            </div>
+
+            <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-semibold">About</Link>
+            <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-semibold">Support</Link>
+          </nav>
+        </div>
+      </div>
 
       {/* Header leaderboard (728x90) - desktop */}
       <HeaderLeader />
