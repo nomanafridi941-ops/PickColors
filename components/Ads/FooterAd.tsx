@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import AdIFrame from './AdIFrame';
+import AdInvoke from './AdInvoke';
 
 const FooterAd: React.FC = () => {
   const [show, setShow] = useState(false);
