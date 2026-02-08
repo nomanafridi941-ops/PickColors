@@ -84,7 +84,7 @@ const AdInvoke: React.FC<AdInvokeProps> = ({ adKey, width, height, id }) => {
   }, [inView, adKey, width, height, id]);
 
   return (
-    <div id={id} ref={containerRef} style={{ width: width, height, minHeight: height, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }} />
+    <div id={id} ref={containerRef} style={{ width: '100%', maxWidth: width, height, minHeight: height, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }} />
   );
 };
 
