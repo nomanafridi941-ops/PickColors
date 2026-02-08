@@ -1,18 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" class="light">
 <head>
-  <script>
-    atOptions = {
-      'key' : 'f4583a41ba86b5c6c7515106fb78a5bb',
-      'format' : 'iframe',
-      'height' : 90,
-      'width' : 728,
-      'params' : {}
-    };
-  </script>
-  <script src="https://www.highperformanceformat.com/f4583a41ba86b5c6c7515106fb78a5bb/invoke.js"></script>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>PickColors - Pro Online Color Toolkit</title>
   <meta name="description" content="16 High-performance color tools for designers and developers. Pick, convert, and generate palettes with precision.">
   
@@ -44,6 +34,10 @@
       font-family: 'Plus Jakarta Sans', sans-serif;
       transition: background-color 0.3s ease;
     }
+    /* Prevent horizontal overflow globally */
+    html, body { max-width: 100vw; overflow-x: hidden; }
+    *, *::before, *::after { box-sizing: border-box; }
+    iframe, .ad-slot iframe, .ad-container { max-width: 100vw; width: 100%; }
     .glass {
       background: rgba(255, 255, 255, 0.8);
       backdrop-filter: blur(12px);
@@ -127,11 +121,12 @@
     function loadFooterAd() {
       var slot = document.getElementById('footer-ad-slot');
       if (slot && !slot.hasChildNodes()) {
+        var w = (typeof window !== 'undefined' && window.innerWidth) ? Math.min(window.innerWidth, 728) : 728;
         window.atOptions = {
           'key': 'f4583a41ba86b5c6c7515106fb78a5bb',
           'format': 'iframe',
-          'height': 90,
-          'width': 728,
+          'height': (w <= 320 ? 50 : 90),
+          'width': w,
           'params': {}
         };
         var s = document.createElement('script');
