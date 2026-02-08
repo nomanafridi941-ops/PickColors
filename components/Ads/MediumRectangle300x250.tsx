@@ -1,10 +1,10 @@
 import React from 'react';
-import AdIFrame from './AdIFrame';
+import AdInvoke from './AdInvoke';
 
 const MediumRectangle300x250: React.FC = () => {
   return (
     <div className="w-full flex justify-center my-6">
-      <AdIFrame adKey="f4583a41ba86b5c6c7515106fb78a5bb" width={300} height={250} id="ad-medium-300x250" />
+      <AdInvoke adKey="83cc7e3f9320cbd2e799761a28a6b41f" width={300} height={250} id="ad-medium-300x250" />
     </div>
   );
 };

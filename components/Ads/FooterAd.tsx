@@ -18,7 +18,7 @@ const FooterAd: React.FC = () => {
 
   return (
     <div className="w-full flex justify-center py-6">
-      <AdIFrame adKey="f4583a41ba86b5c6c7515106fb78a5bb" width={728} height={90} id="ad-footer-728x90" />
+      <AdInvoke adKey="f4583a41ba86b5c6c7515106fb78a5bb" width={728} height={90} id="ad-footer-728x90" />
     </div>
   );
 };
