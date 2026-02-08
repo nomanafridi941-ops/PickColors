@@ -88,6 +88,15 @@ const ImageExtractor: React.FC<{ useUrl?: boolean }> = ({ useUrl }) => {
         title="Image Color Extractor"
         description="Upload images to extract dominant color palettes. AI-powered color extraction from photos for design inspiration."
         url="/tools/extractor"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {"@type": "Question","name": "Can I extract colors from any image?","acceptedAnswer": {"@type": "Answer","text": "Yes, upload or link to most public images; if CORS blocks direct access we offer a proxy fallback."}},
+            {"@type": "Question","name": "How many colors are extracted?","acceptedAnswer": {"@type": "Answer","text": "Up to 10 prominent colors are detected per image."}},
+            {"@type": "Question","name": "Is the tool free?","acceptedAnswer": {"@type": "Answer","text": "Yes — it's free and does not require login."}}
+          ]
+        }}
       />
       <div className="max-w-7xl mx-auto py-16 px-4">
       <Breadcrumbs />
@@ -98,8 +107,8 @@ const ImageExtractor: React.FC<{ useUrl?: boolean }> = ({ useUrl }) => {
         <h1 className="text-5xl font-black mb-4 tracking-tight">
           {useUrl ? 'Palette from Image URL' : 'Image Color Extractor'}
         </h1>
-        <p className="text-slate-500 max-w-2xl mx-auto text-lg">
-          {useUrl ? "Extract visual DNA from any web image. We use a proxy to bypass most CORS restrictions." : "Professional-grade color sampling from your local design assets."}
+        <p className="text-slate-500 max-w-3xl mx-auto text-lg">
+          Quickly extract meaningful color palettes from photographs, screenshots, and design assets with our Image Color Extractor. Upload a local file or paste an image URL—if an image is protected by CORS we attempt a secure proxy fallback so you can still analyze colors. The tool detects up to ten prominent colors, presenting them as HEX codes you can copy into your designs or CSS. Whether you're matching brand imagery, pulling inspiration from photography, or preparing assets for social media, this extractor speeds up the process of turning visuals into usable color systems. It’s especially useful for designers, content creators, and developers who need fast, reliable palettes from real images without complicated tooling.
         </p>
       </div>
 

@@ -14,14 +14,23 @@ const ReadabilityTester: React.FC = () => {
         title="Readability Tester"
         description="Preview text readability across different sizes and backgrounds. Test color combinations for readability."
         url="/tools/readability"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {"@type": "Question","name": "What does the Readability Tester check?","acceptedAnswer": {"@type": "Answer","text": "It previews text across sizes, weights, and color combinations to help evaluate legibility."}},
+            {"@type": "Question","name": "Can I adjust font size?","acceptedAnswer": {"@type": "Answer","text": "Yes — use the slider to preview different font sizes from 12px to 72px."}},
+            {"@type": "Question","name": "Is this tool free?","acceptedAnswer": {"@type": "Answer","text": "Yes — free to use with no sign-in required."}}
+          ]
+        }}
       />
       <div className="max-w-5xl mx-auto py-16 px-4">
       <Breadcrumbs />
       <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4 text-center">
         Text Readability Tester Online
       </h1>
-      <p className="text-slate-600 dark:text-slate-300 text-lg mb-8 max-w-2xl mx-auto text-center">
-        Instantly preview and test text readability across different font sizes, colors, and backgrounds. This free online readability tester helps designers and developers ensure their content is easy to read for everyone.
+      <p className="text-slate-600 dark:text-slate-300 text-lg mb-8 max-w-3xl mx-auto text-center">
+        The Readability Tester helps you preview real text across different color combinations, sizes, and font weights so you can make informed typographic choices. Adjust background and foreground colors, change font size with the slider, and instantly see how your content performs in terms of legibility. This tool is built for content editors, designers, and frontend engineers who need to ensure headings, body text, and interface labels are comfortable to read on all devices. Use it alongside the Contrast Checker to validate accessibility thresholds and refine typography choices until they meet both visual and functional standards.
       </p>
       
       <ToolsAdRow />

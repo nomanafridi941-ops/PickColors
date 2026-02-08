@@ -6,6 +6,7 @@ interface SEOHeadProps {
   description: string;
   url?: string;
   image?: string;
+  jsonLd?: object | object[];
 }
 
 const SEOHead: React.FC<SEOHeadProps> = ({ title, description, url, image }) => {
@@ -25,6 +26,9 @@ const SEOHead: React.FC<SEOHeadProps> = ({ title, description, url, image }) => 
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
       <link rel="canonical" href={fullUrl} />
+      {jsonLd && (
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+      )}
     </Helmet>
   );
 };

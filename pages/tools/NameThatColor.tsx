@@ -34,6 +34,15 @@ const NameThatColor: React.FC = () => {
         title="Name That Color"
         description="Identify names for specific color codes. Find the perfect name for any hex color."
         url="/tools/namer"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {"@type": "Question","name": "How does Name That Color work?","acceptedAnswer": {"@type": "Answer","text": "It compares your hex color against a standard list and returns the closest named color by RGB distance."}},
+            {"@type": "Question","name": "Can I use the names in CSS?","acceptedAnswer": {"@type": "Answer","text": "If the name corresponds to a valid CSS color name, you can use it directly in stylesheets."}},
+            {"@type": "Question","name": "Is this tool free?","acceptedAnswer": {"@type": "Answer","text": "Yes — free with no login required."}}
+          ]
+        }}
       />
       <div className="max-w-4xl mx-auto py-20 px-4 text-center">
       <Breadcrumbs />
@@ -41,8 +50,8 @@ const NameThatColor: React.FC = () => {
       <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4">
         Hex Color Name Finder Online
       </h1>
-      <p className="text-slate-600 dark:text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
-        Instantly find the closest color name for any hex code. This free online color name finder helps designers, developers, and marketers identify and use named colors for web, UI, and branding projects.
+      <p className="text-slate-600 dark:text-slate-300 text-lg mb-8 max-w-3xl mx-auto">
+        Find human-friendly names for exact hex colors quickly with Name That Color. Enter a hex code or pick a sample to discover the closest named match from our curated color list. This makes it easier to document palettes, communicate colors with teammates, or use descriptive names in style guides and documentation. The matcher calculates color distance in RGB space and returns the most similar color name along with the hex code so you can copy either value for use in your project. Perfect for designers, developers, and content teams who prefer meaningful labels over raw hex values when collaborating on brand and UI work.
       </p>
       <h1 className="text-5xl font-black mb-12">Name That Color</h1>
       <div className="flex flex-col items-center gap-12">

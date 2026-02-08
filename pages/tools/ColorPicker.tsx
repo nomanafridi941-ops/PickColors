@@ -52,6 +52,15 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ initialMode }) => {
         title="Color Picker & Converter"
         description="Pick colors visually and convert between HEX, RGB, and HSL. Accurate color conversion tool for designers and developers."
         url="/tools/picker"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {"@type": "Question","name": "What formats does the Color Picker support?","acceptedAnswer": {"@type": "Answer","text": "HEX, RGB, and HSL are supported and convertible with one click."}},
+            {"@type": "Question","name": "Can I copy CSS-ready values?","acceptedAnswer": {"@type": "Answer","text": "Yes — copy buttons produce CSS-friendly values ready for paste into stylesheets."}},
+            {"@type": "Question","name": "Is this tool free?","acceptedAnswer": {"@type": "Answer","text": "Yes — PickColors tools are free to use without sign-in."}}
+          ]
+        }}
       />
       <div className="max-w-6xl mx-auto py-16 px-4">
       <Breadcrumbs />
@@ -63,8 +72,8 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ initialMode }) => {
            initialMode === 'hsl' ? 'HSL Color Converter' : 
            'Color Picker & Converter'}
         </h1>
-        <p className="text-slate-600 dark:text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
-          Instantly pick, convert, and copy color codes for web design, UI, and digital projects. This free online HEX color picker helps designers and developers convert between HEX, RGB, and HSL formats with one click. Perfect for anyone needing accurate color values for CSS, branding, or creative work.
+        <p className="text-slate-600 dark:text-slate-300 text-lg mb-8 max-w-3xl mx-auto">
+          Our Color Picker & Converter gives designers and developers a single, dependable place to choose colors visually and convert them across HEX, RGB, and HSL models. Whether you’re building a brand palette, authoring CSS, or matching colors from mockups, this tool helps you get precise values quickly. Use the interactive color input to explore shades, tweak channels numerically for exact matches, and copy CSS-ready values directly into your projects. It also supports keyboard and clipboard workflows so you can iterate faster. The conversion algorithms use standard sRGB mappings to avoid color drift, and the UI shows a live preview so you can see how colors behave in context. Best for frontend engineers, product designers, and hobbyists who need reliable color values without installing extra tools.
         </p>
       </div>
 

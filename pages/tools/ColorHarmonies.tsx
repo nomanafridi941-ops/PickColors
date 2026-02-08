@@ -41,6 +41,15 @@ const ColorHarmonies: React.FC = () => {
         title="Color Harmonies"
         description="Discover perfect color combinations using color theory. Generate harmonies like complementary, analogous, and triadic palettes."
         url="/tools/harmonies"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {"@type": "Question","name": "What are color harmonies?","acceptedAnswer": {"@type": "Answer","text": "Color harmonies are combinations derived from the color wheel that work well together, such as complementary, analogous, and triadic schemes."}},
+            {"@type": "Question","name": "Can I use these palettes in my designs?","acceptedAnswer": {"@type": "Answer","text": "Yes — copy any generated color code and paste into your CSS or design tool."}},
+            {"@type": "Question","name": "Is this tool free?","acceptedAnswer": {"@type": "Answer","text": "Yes — it’s free to use with no account required."}}
+          ]
+        }}
       />
       <div className="max-w-6xl mx-auto py-16 px-4">
       <Breadcrumbs />
@@ -48,8 +57,8 @@ const ColorHarmonies: React.FC = () => {
         <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4">
           Color Harmonies Generator Online
         </h1>
-        <p className="text-slate-600 dark:text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
-          Instantly generate harmonious color palettes using color theory. This free online color harmonies tool helps designers and developers create complementary, analogous, triadic, and more color schemes for any project.
+        <p className="text-slate-600 dark:text-slate-300 text-lg mb-8 max-w-3xl mx-auto">
+          Use our Color Harmonies Generator to create balanced, professional color palettes based on established color theory principles. Start with a base color and instantly explore complementary, analogous, triadic, split-complementary, and tetradic combinations that work together visually. Each generated palette includes precise HEX values so you can copy them directly into stylesheets, design systems, or prototyping tools. The tool is designed to speed up creative workflows: experiment quickly, compare options side-by-side, and lock or copy colors with a single click. Ideal for UI designers, brand teams, and developers who want predictable, harmonious color systems without the guesswork. Accessibility and contrast considerations are simple to integrate — use related tools on PickColors to verify contrast and readability for any palette you create.
         </p>
       </div>
 

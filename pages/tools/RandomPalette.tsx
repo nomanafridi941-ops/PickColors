@@ -34,9 +34,24 @@ const RandomPalette: React.FC = () => {
         title="Random Color Palette Generator"
         description="Generate fresh color palettes with a single click. Random color combinations for design inspiration."
         url="/tools/palette"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {"@type": "Question","name": "How many colors are generated?","acceptedAnswer": {"@type": "Answer","text": "By default five colors are generated; you can reshuffle to get new combinations."}},
+            {"@type": "Question","name": "Can I lock colors?","acceptedAnswer": {"@type": "Answer","text": "Yes — lock a color to keep it while reshuffling others."}},
+            {"@type": "Question","name": "Is this free to use?","acceptedAnswer": {"@type": "Answer","text": "Yes — free and no sign-in required."}}
+          ]
+        }}
       />
       <div className="h-[calc(100vh-80px)] w-full flex flex-col">
       <Breadcrumbs />
+      <div className="text-center mb-8 px-4">
+        <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4">Random Palette Generator</h1>
+        <p className="text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+          Quickly generate ready-to-use color palettes to spark creative direction or kickstart a design. Our Random Palette Generator produces harmonious sets that are easy to preview and copy into your projects. Use the shuffle button or press the spacebar to generate fresh combinations; lock colors you want to keep while remixing the rest. Each palette displays HEX values so you can paste them directly into CSS, design tools, or pattern libraries. This tool is ideal when you need inspiration fast—try several shuffles to find a foundation for UI themes, marketing assets, or illustration palettes. Combine it with the Contrast Checker and Color Harmonies tools to refine palettes for accessibility and coherence.
+        </p>
+      </div>
       <ToolsAdRow />
         {colors.map((c, i) => (
           <div 

@@ -28,16 +28,24 @@ const ContrastChecker: React.FC<ContrastCheckerProps> = ({ fullAudit }) => {
         title="Contrast Checker"
         description="Test color accessibility based on WCAG guidelines. Check color contrast ratios for web accessibility compliance."
         url="/tools/contrast"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {"@type": "Question","name": "What contrast ratio is required for WCAG AA?","acceptedAnswer": {"@type": "Answer","text": "WCAG AA requires a contrast ratio of at least 4.5:1 for normal text and 3:1 for large text."}},
+            {"@type": "Question","name": "Can I test transparency?","acceptedAnswer": {"@type": "Answer","text": "This tool currently supports solid colors; for images or transparency use the Image Color Extractor or manual checks."}},
+            {"@type": "Question","name": "Is this tool free?","acceptedAnswer": {"@type": "Answer","text": "Yes — free to use with no account needed."}}
+          ]
+        }}
       />
       <div className="max-w-5xl mx-auto py-16 px-4">
       <Breadcrumbs />
       <div className="text-center mb-16">
-        {/* SEO-optimized H1 and intro */}
         <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4">
           Color Contrast Checker for Accessibility
         </h1>
-        <p className="text-slate-600 dark:text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
-          Instantly test and improve your color combinations for web accessibility. This free online contrast checker helps designers and developers ensure their text and backgrounds meet WCAG 2.1 standards for readability and compliance.
+        <p className="text-slate-600 dark:text-slate-300 text-lg mb-8 max-w-3xl mx-auto">
+          Ensure your color combinations are readable and compliant with WCAG using our Contrast Checker. Enter foreground and background colors to see an instant contrast ratio and pass/fail status for WCAG AA and AAA levels. This tool is designed for frontend developers, product designers, and accessibility auditors who need fast, reliable feedback while they iterate. It provides clear guidance on which combinations will pass accessibility checks and explains acceptable thresholds for normal and large text. Use it alongside our Readability Tester and Palette Generator to design palettes that are both beautiful and accessible. The interface supports copy-ready CSS values and quick adjustments so you can rapidly test alternatives without leaving your design workflow.
         </p>
       </div>
       
