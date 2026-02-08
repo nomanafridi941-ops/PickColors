@@ -9,7 +9,7 @@ interface SEOHeadProps {
   jsonLd?: object | object[];
 }
 
-const SEOHead: React.FC<SEOHeadProps> = ({ title, description, url, image }) => {
+const SEOHead: React.FC<SEOHeadProps> = ({ title, description, url, image, jsonLd }) => {
   const siteUrl = 'https://pickcolors.xyz';
   const fullUrl = url ? `${siteUrl}${url}` : siteUrl;
   const ogImage = image || `${siteUrl}/og-image.png`;
