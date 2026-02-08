@@ -37,17 +37,7 @@ const SocialBar: React.FC = () => {
         <a href={`mailto:?subject=${encodeURIComponent(document.title)}&body=${encodeURIComponent(url)}`} aria-label="Share by Email" className="w-10 h-10 bg-white rounded-lg shadow flex items-center justify-center">@</a>
       </div>
 
-      {/* Mobile compact toggle (bottom-right) */}
-      <div className="lg:hidden fixed bottom-24 right-4 z-50">
-        <details>
-          <summary className="w-12 h-12 bg-white rounded-full shadow flex items-center justify-center">+</summary>
-          <div className="mt-2 p-2 bg-white rounded-xl shadow flex flex-col gap-2">
-            <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(document.title)}&url=${encodeURIComponent(url)}`} target="_blank" rel="noreferrer" className="text-sm">Twitter</a>
-            <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`} target="_blank" rel="noreferrer" className="text-sm">Facebook</a>
-            <a href={`mailto:?subject=${encodeURIComponent(document.title)}&body=${encodeURIComponent(url)}`} className="text-sm">Email</a>
-          </div>
-        </details>
-      </div>
+      {/* Mobile floating toggle removed to avoid layout issues on small screens */}
     </>
   );
 };
