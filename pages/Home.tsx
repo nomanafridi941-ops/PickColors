@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { TOOLS } from '../constants';
 
 import SEOHead from '../components/SEOHead';
-import AdBanner from '../components/AdBanner';
 
 const Home: React.FC = () => {
   return (
@@ -44,10 +43,7 @@ const Home: React.FC = () => {
             </Link>
           </div>
 
-          {/* 728x90 Banner Ad */}
-          <div className="mt-8 flex justify-center">
-            <AdBanner adKey="f4583a41ba86b5c6c7515106fb78a5bb" width={728} height={90} id="ad-home-hero" />
-          </div>
+          {/* Header leaderboard handled globally in layout (avoid duplicate) */}
         </div>
       </section>
 
