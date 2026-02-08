@@ -43,6 +43,9 @@ const AdInvoke: React.FC<AdInvokeProps> = ({ adKey, width, height, id }) => {
       effHeight = effWidth === 468 ? 60 : height;
     }
 
+    // Ensure we never set an ad wider than the current viewport (prevents overflow)
+    effWidth = Math.min(effWidth, viewport);
+
     const slotId = id || `ad-invoke-${adKey}-${effWidth}x${effHeight}`;
     if (!window.__ad_injected_ids) window.__ad_injected_ids = {};
     if (window.__ad_injected_ids[slotId]) return;
