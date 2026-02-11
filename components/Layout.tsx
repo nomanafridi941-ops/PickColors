@@ -169,8 +169,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       </main>
 
       {/* ...ad removed... */}
-      <SocialBar />
-      <MobileSticky />
+      {/* ...ad removed... */}
 
       {/* ...ad removed... */}
 
