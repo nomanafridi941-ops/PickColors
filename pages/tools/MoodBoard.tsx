@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { GoogleGenAI, Type } from "@google/genai";
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
-import ToolsAdRow from '../../components/Ads/ToolsAdRow';
+// ...existing code...
 
 const MoodBoard: React.FC = () => {
   const [keyword, setKeyword] = useState('');
@@ -93,7 +93,7 @@ const MoodBoard: React.FC = () => {
         </div>
       </div>
 
-      <ToolsAdRow />
+      {/* ...ad removed... */}
 
       {/* Helper text for copy functionality */}
       <p className="text-xs text-slate-400 mt-2 mb-6">Copy any mood board color code with one click.</p>

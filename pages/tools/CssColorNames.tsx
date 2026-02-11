@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { hexToRgb } from '../../utils/colorUtils';
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
-import ToolsAdRow from '../../components/Ads/ToolsAdRow';
+// ...existing code...
 
 const CSS_COLORS = [
   { name: 'AliceBlue', hex: '#F0F8FF' }, { name: 'AntiqueWhite', hex: '#FAEBD7' }, { name: 'Aqua', hex: '#00FFFF' },
@@ -104,7 +104,7 @@ const CssColorNames: React.FC = () => {
         </p>
       </div>
 
-      <ToolsAdRow />
+      {/* ...ad removed... */}
 
       <div className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border dark:border-slate-800 shadow-2xl shadow-indigo-500/5 mb-16 max-w-4xl mx-auto">
         <div className="grid md:grid-cols-2 gap-8">

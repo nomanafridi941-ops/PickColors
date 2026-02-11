@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { hexToRgb, getContrastRatio } from '../../utils/colorUtils';
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
-import ToolsAdRow from '../../components/Ads/ToolsAdRow';
+// ...existing code...
 import RelatedTools from '../../components/RelatedTools';
 import FAQList from '../../components/FAQList';
 import { TOOLS } from '../../constants';
@@ -64,7 +64,7 @@ const ContrastChecker: React.FC<ContrastCheckerProps> = ({ fullAudit }) => {
         </p>
       </div>
       
-      <ToolsAdRow />
+      {/* ...ad removed... */}
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
         <div className="lg:col-span-5 space-y-8">

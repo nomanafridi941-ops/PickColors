@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { hexToRgb, rgbToHex, rgbToHsl, hslToRgb } from '../../utils/colorUtils';
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
-import ToolsAdRow from '../../components/Ads/ToolsAdRow';
+// ...existing code...
 import RelatedTools from '../../components/RelatedTools';
 import FAQList from '../../components/FAQList';
 import { TOOLS } from '../../constants';
@@ -92,7 +92,7 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ initialMode }) => {
         </p>
       </div>
 
-      <ToolsAdRow />
+      {/* ...ad removed... */}
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="lg:col-span-7 space-y-8">

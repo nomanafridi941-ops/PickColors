@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
-import ToolsAdRow from '../../components/Ads/ToolsAdRow';
+// ...existing code...
 import RelatedTools from '../../components/RelatedTools';
 import FAQList from '../../components/FAQList';
 import { TOOLS } from '../../constants';
@@ -178,7 +178,7 @@ const ImageExtractor: React.FC<{ useUrl?: boolean }> = ({ useUrl }) => {
         )}
       </div>
 
-      <ToolsAdRow />
+      {/* ...ad removed... */}
       {/* SEO-optimized H1 and intro */}
       <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4">
         Pick Color from Image Online

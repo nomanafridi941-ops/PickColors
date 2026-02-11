@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
-import ToolsAdRow from '../../components/Ads/ToolsAdRow';
+// ...existing code...
 import RelatedTools from '../../components/RelatedTools';
 import FAQList from '../../components/FAQList';
 import { TOOLS } from '../../constants';
@@ -48,7 +48,7 @@ const ReadabilityTester: React.FC = () => {
         The Readability Tester helps you preview real text across different color combinations, sizes, and font weights so you can make informed typographic choices. Adjust background and foreground colors, change font size with the slider, and instantly see how your content performs in terms of legibility. This tool is built for content editors, designers, and frontend engineers who need to ensure headings, body text, and interface labels are comfortable to read on all devices. Use it alongside the Contrast Checker to validate accessibility thresholds and refine typography choices until they meet both visual and functional standards.
       </p>
       
-      <ToolsAdRow />
+      {/* ...ad removed... */}
 
       <div className="grid lg:grid-cols-4 gap-8 mb-12">
         <div className="p-6 bg-white dark:bg-slate-900 rounded-2xl border dark:border-slate-800">

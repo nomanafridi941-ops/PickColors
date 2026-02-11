@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { getHarmonies } from '../../utils/colorUtils';
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
-import ToolsAdRow from '../../components/Ads/ToolsAdRow';
+// ...existing code...
 import RelatedTools from '../../components/RelatedTools';
 import FAQList from '../../components/FAQList';
 import { TOOLS } from '../../constants';
@@ -34,7 +34,7 @@ const ColorHarmonies: React.FC = () => {
         ))}
       </div>
 
-      <ToolsAdRow />
+      {/* ...ad removed... */}
     </div>
   );
 

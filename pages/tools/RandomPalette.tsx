@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { generateRandomHex } from '../../utils/colorUtils';
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
-import ToolsAdRow from '../../components/Ads/ToolsAdRow';
+// ...existing code...
 import RelatedTools from '../../components/RelatedTools';
 import FAQList from '../../components/FAQList';
 import { TOOLS } from '../../constants';
@@ -67,7 +67,7 @@ const RandomPalette: React.FC = () => {
           Quickly generate ready-to-use color palettes to spark creative direction or kickstart a design. Our Random Palette Generator produces harmonious sets that are easy to preview and copy into your projects. Use the shuffle button or press the spacebar to generate fresh combinations; lock colors you want to keep while remixing the rest. Each palette displays HEX values so you can paste them directly into CSS, design tools, or pattern libraries. This tool is ideal when you need inspiration fast—try several shuffles to find a foundation for UI themes, marketing assets, or illustration palettes. Combine it with the Contrast Checker and Color Harmonies tools to refine palettes for accessibility and coherence.
         </p>
       </div>
-      <ToolsAdRow />
+      {/* ...ad removed... */}
         {colors.map((c, i) => (
           <div 
             key={i} 

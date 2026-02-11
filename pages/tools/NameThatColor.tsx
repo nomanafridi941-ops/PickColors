@@ -3,7 +3,7 @@ import { COLOR_NAMES_MAP } from '../../constants';
 import { hexToRgb } from '../../utils/colorUtils';
 import SEOHead from '../../components/SEOHead';
 import Breadcrumbs from '../../components/Breadcrumbs';
-import ToolsAdRow from '../../components/Ads/ToolsAdRow';
+// ...existing code...
 import RelatedTools from '../../components/RelatedTools';
 import FAQList from '../../components/FAQList';
 import { TOOLS } from '../../constants';
@@ -61,7 +61,7 @@ const NameThatColor: React.FC = () => {
       />
       <div className="max-w-4xl mx-auto py-20 px-4 text-center">
       <Breadcrumbs />
-      <ToolsAdRow />
+      {/* ...ad removed... */}
       <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4">
         Hex Color Name Finder Online
       </h1>
